@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South of the Park — Lower &amp; Midtown Manhattan, 4–6 September 2026</title>
+<style>
+:root{
+  --ink:#12161c;
+  --ink-2:#2b323c;
+  --paper:#e5e8e3;
+  --card:#ffffff;
+  --rule:#c6cbc4;
+  --muted:#5c6470;
+  --line-red:#ee352e;
+  --line-green:#00933c;
+  --line-blue:#0039a6;
+  --line-orange:#ff6319;
+  --line-brown:#996633;
+  --line-yellow:#fccc0a;
+  --line-purple:#b933ad;
+  --line-lime:#6cbe45;
+  --line-grey:#8d9199;
+  --water:#d3dbe0;
+  --land:#dcded7;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:17px;line-height:1.58;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button{font:inherit;color:inherit}
+
+/* ---------- signage header ---------- */
+.signage{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;}
+.signage-top{
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  padding:11px 20px 9px;border-bottom:1px solid #262c36;
+}
+.mark{
+  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.mark span{display:inline-block;background:#fff;color:var(--ink);padding:2px 7px 1px;margin-right:2px;}
+.dateline{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:#9aa3ae;
+  text-transform:uppercase;
+}
+.dateline b{color:#fff;font-weight:400}
+nav{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none}
+nav button{
+  flex:0 0 auto;background:none;border:0;cursor:pointer;color:#a9b1bb;
+  font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:12px 15px 11px;display:flex;align-items:center;gap:8px;
+  border-bottom:4px solid transparent;transition:color .12s;white-space:nowrap;
+}
+nav button:hover{color:#fff}
+nav button .bul{
+  width:17px;height:17px;border-radius:50%;background:var(--c);display:grid;place-items:center;
+  font-size:10px;font-weight:700;color:#fff;letter-spacing:0;flex:0 0 auto;
+}
+nav button[data-c="yellow"] .bul,nav button[data-c="lime"] .bul{color:#12161c}
+nav button[aria-current="true"]{color:#fff;border-bottom-color:var(--c)}
+.railbar{height:6px;background:var(--c,#888)}
+
+/* ---------- layout ---------- */
+main{max-width:1080px;margin:0 auto;padding:0 20px 100px}
+.card{display:none;padding-top:34px}
+.card.on{display:block;animation:in .22s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 10px;
+}
+h1{
+  font-family:var(--sans);font-weight:700;letter-spacing:-.025em;line-height:1.02;
+  font-size:clamp(34px,6.4vw,58px);margin:0 0 6px;display:flex;align-items:center;gap:14px;
+}
+h1 .bul{
+  width:.62em;height:.62em;border-radius:50%;background:var(--c);flex:0 0 auto;
+}
+.sub{font-size:20px;line-height:1.45;color:var(--ink-2);max-width:62ch;margin:0 0 26px}
+h2{
+  font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.13em;text-transform:uppercase;
+  margin:44px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--ink);
+}
+h2:first-of-type{margin-top:34px}
+h2 em{font-style:normal;color:var(--muted);letter-spacing:.06em;text-transform:none;font-weight:400;font-family:var(--serif);font-size:15px;float:right;}
+h3{font-family:var(--sans);font-size:17px;letter-spacing:-.01em;margin:26px 0 6px}
+p{margin:0 0 14px;max-width:70ch}
+.lede{font-size:18.5px}
+small,.small{font-size:14px}
+
+/* ---------- station list (signature) ---------- */
+.line{list-style:none;margin:18px 0 0;padding:0 0 0 34px;position:relative}
+.line::before{
+  content:"";position:absolute;left:8px;top:12px;bottom:12px;width:5px;
+  background:var(--c);border-radius:3px;
+}
+.stop{position:relative;margin:0 0 12px}
+.stop::before{
+  content:"";position:absolute;left:-31px;top:19px;width:15px;height:15px;border-radius:50%;
+  background:var(--card);border:4px solid var(--c);
+}
+.stop.term::before{border-radius:2px}
+.box{
+  background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:14px 16px 13px;
+}
+.stop .box{border-left:3px solid var(--c)}
+.nm{
+  font-family:var(--sans);font-weight:700;font-size:17.5px;letter-spacing:-.012em;
+  margin:0 0 2px;display:block;
+}
+.meta{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);
+  margin:0 0 8px;text-transform:uppercase;
+}
+.meta .hood{color:var(--ink);font-weight:600}
+.box p{margin:0 0 8px;font-size:16px;line-height:1.5}
+.box p:last-child{margin-bottom:0}
+.flag{
+  display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;
+  margin:0 5px 5px 0;background:var(--ink);color:#fff;vertical-align:2px;
+}
+.flag.warn{background:var(--line-red)}
+.flag.ok{background:var(--line-green)}
+.flag.cash{background:var(--line-yellow);color:var(--ink)}
+.flag.free{background:var(--line-blue)}
+.tip{font-size:15px;color:var(--ink-2);border-top:1px dotted var(--rule);padding-top:8px;margin-top:9px}
+.tip b{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.links{margin-top:9px;font-family:var(--sans);font-size:12.5px;letter-spacing:.02em}
+.links a{
+  display:inline-block;margin:0 14px 4px 0;text-decoration:none;
+  border-bottom:2px solid var(--c);padding-bottom:1px;font-weight:600;
+}
+.links a:hover{background:var(--c);color:#fff;border-color:transparent}
+
+/* ---------- filter chips ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 4px}
+.chip{
+  border:1.5px solid var(--ink);background:none;border-radius:20px;cursor:pointer;
+  font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;padding:5px 13px 4px;
+}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+.count{font-family:var(--mono);font-size:11px;color:var(--muted);margin:10px 0 0;letter-spacing:.05em}
+
+/* ---------- panels ---------- */
+.panel{
+  background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:18px 20px;margin:20px 0;max-width:840px;
+}
+.panel.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel.dark h3{color:#fff;margin-top:0}
+.panel.dark a{color:#fff}
+.panel.rule{border-left:5px solid var(--c)}
+.panel h3:first-child{margin-top:0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:14px 15px}
+.stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.stat .v{font-family:var(--sans);font-weight:700;font-size:21px;letter-spacing:-.02em;display:block;line-height:1.15}
+.stat .n{font-size:14.5px;color:var(--ink-2);display:block;margin-top:5px;line-height:1.4}
+
+/* ---------- day columns ---------- */
+.days{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:20px 0}
+.day{background:var(--card);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.day header{background:var(--ink);color:#fff;padding:11px 15px 9px}
+.day header .d{font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:-.02em}
+.day header .w{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3ae}
+.day ul{list-style:none;margin:0;padding:6px 15px 15px}
+.day li{padding:9px 0;border-bottom:1px dotted var(--rule);font-size:15.5px;line-height:1.45}
+.day li:last-child{border-bottom:0}
+.day li .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--muted);display:block}
+.day li b{font-family:var(--sans);font-size:15.5px;letter-spacing:-.005em}
+
+/* ---------- map ---------- */
+.mapwrap{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:12px;margin:18px 0}
+#svgmap{width:100%;height:auto;display:block;touch-action:pan-y}
+#svgmap text{font-family:var(--sans);pointer-events:none}
+.hood-label{paint-order:stroke;stroke:#fbfbf9;stroke-width:3.5px;stroke-linejoin:round}
+.mk{cursor:pointer}
+.mk circle{stroke:#fff;stroke-width:2}
+.mk:hover circle,.mk:focus circle{stroke:var(--ink);stroke-width:2.5}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.lg{
+  display:flex;align-items:center;gap:7px;border:1.5px solid var(--rule);background:none;
+  border-radius:20px;cursor:pointer;padding:4px 12px 3px;
+  font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+}
+.lg i{width:11px;height:11px;border-radius:50%;background:var(--k);display:block}
+.lg[aria-pressed="false"]{opacity:.34}
+#mapinfo{
+  min-height:74px;border-top:2px solid var(--ink);margin-top:10px;padding-top:11px;
+  font-size:15.5px;line-height:1.45;
+}
+#mapinfo .nm{font-size:17px}
+#mapinfo .meta{margin-bottom:6px}
+
+/* ---------- misc ---------- */
+.jump{
+  background:none;border:0;border-bottom:2px solid var(--ink);cursor:pointer;padding:0 0 1px;
+  font-family:var(--sans);font-weight:700;font-size:.92em;letter-spacing:.01em;
+}
+.jump:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15.5px;background:var(--card)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;border-bottom:0}
+td:first-child{font-family:var(--sans);font-weight:700;font-size:15px;white-space:nowrap}
+footer{
+  border-top:2px solid var(--ink);margin-top:60px;padding:18px 0 0;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);
+}
+:focus-visible{outline:3px solid var(--line-blue);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  main{padding:0 14px 80px}
+  .line{padding-left:28px}
+  .line::before{left:5px}
+  .stop::before{left:-27px;width:13px;height:13px;border-width:3.5px}
+  h2 em{float:none;display:block;margin-top:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="signage">
+  <div class="signage-top">
+    <div class="mark"><span>S</span>outh of the Park</div>
+    <div class="dateline">Manhattan below 59th St &nbsp;·&nbsp; <b>Fri 4 – Sun 6 Sep 2026</b> &nbsp;·&nbsp; Labor Day weekend</div>
+  </div>
+  <nav id="nav" aria-label="Guide sections"></nav>
+  <div class="railbar" id="rail"></div>
+</header>
+
+<main id="main"></main>
+
+<script>
+/* =======================================================================
+   SECTIONS
+   ======================================================================= */
+const LINES = {
+  red:'#ee352e', green:'#00933c', blue:'#0039a6', orange:'#ff6319',
+  brown:'#996633', yellow:'#fccc0a', purple:'#b933ad', lime:'#6cbe45', grey:'#8d9199'
+};
+const SECTIONS = [
+  {id:'overview',   glyph:'1', c:'red',    nav:'Overview'},
+  {id:'hoods',      glyph:'6', c:'green',  nav:'Neighborhoods'},
+  {id:'see',        glyph:'A', c:'blue',   nav:'Attractions'},
+  {id:'eat',        glyph:'F', c:'orange', nav:'Eat'},
+  {id:'drink',      glyph:'J', c:'brown',  nav:'Drink & Night'},
+  {id:'weekend',    glyph:'N', c:'yellow', nav:'This Weekend'},
+  {id:'map',        glyph:'7', c:'purple', nav:'Map'},
+  {id:'plan',       glyph:'G', c:'lime',   nav:'Three Days'},
+  {id:'practical',  glyph:'L', c:'grey',   nav:'Practical'}
+];
+
+/* =======================================================================
+   PLACES  —  every entry is also a map pin
+   cat: see | eat | drink | event | hub
+   ======================================================================= */
+const P = [
+
+/* ---------------- ATTRACTIONS ---------------- */
+{s:'see',t:['Waterfront','Free'],n:'The Battery & SeaGlass Carousel',h:'Financial District',a:'State St at Battery Pl',lat:40.7033,lng:-74.0155,
+ o:'Park open daily; carousel roughly 11:00–19:00',
+ d:'Manhattan\u2019s southern tip: harbor on three sides, Castle Clinton\u2019s 1811 fort, and a carousel where you ride inside luminous fish. Every harbour ferry leaves from here.',
+ tip:'Come at opening for the Statue boat, or at dusk when the harbour goes gold and the crowds have gone.'},
+
+{s:'see',t:['Icon','Ticketed'],n:'Statue of Liberty & Ellis Island',h:'New York Harbor',a:'Ferries from Battery Park',lat:40.7028,lng:-74.0172,
+ o:'Ferries roughly 08:30–16:00; allow 4–5 hrs for both islands',
+ d:'One ticket covers both islands. Ellis Island\u2019s immigration museum is the more moving half and the less crowded one; most day-trippers photograph the statue and leave.',
+ f:['warn|Book ahead'],
+ tip:'Crown and pedestal tickets sell out months out and Labor Day weekend is peak. If you missed them, the Staten Island Ferry passes the statue for free.',
+ l:[['Statue City Cruises','https://www.statuecitycruises.com/']]},
+
+{s:'see',t:['Free','Waterfront'],n:'Staten Island Ferry',h:'Financial District',a:'Whitehall Terminal, 4 South St',lat:40.7013,lng:-74.0134,
+ o:'24 hours, every 30 min (more often at rush hour)',
+ d:'A 25-minute commuter crossing that happens to sail past Governors Island, Ellis Island and the Statue of Liberty. Free, no ticket, no queue.',
+ f:['free|Free'],
+ tip:'Stand on the starboard (right) side heading to Staten Island for the statue, port side coming back for the skyline. You must disembark and re-board at St George.'},
+
+{s:'see',t:['Park','Free'],n:'Governors Island',h:'New York Harbor',a:'Ferry from Battery Maritime Building, 10 South St',lat:40.7013,lng:-74.0122,
+ o:'Open daily; frequent weekend ferries, 8-minute crossing',
+ d:'A car-free 172-acre island: a former army post, glamping tents, art in the old officers\u2019 houses, and The Hills, four man-made mounds with the best low-angle view of the harbour.',
+ tip:'Rent a bike on the island rather than bringing one. Weekend morning ferries are cheap or free; afternoon boats fill up.',
+ l:[['Governors Island','https://www.govisland.org/']]},
+
+{s:'see',t:['Museum','Free option'],n:'9/11 Memorial & Museum',h:'Financial District',a:'180 Greenwich St',lat:40.7115,lng:-74.0134,
+ o:'Plaza free, dawn–dusk. Museum roughly 09:00–19:00, last entry 17:30',
+ d:'Two voids where the towers stood, ringed by 2,983 names in bronze. The museum below is deliberately hard going — the slurry wall, the Survivors\u2019 Stairs, recorded voices.',
+ f:['warn|Timed entry'],
+ tip:'2026 is the 25th anniversary. Expect the site to be busy and increasingly ceremonial as the week goes on; the exhibition <i>Our Flag Was Still There</i> is in Foundation Hall.',
+ l:[['911memorial.org','https://www.911memorial.org/']]},
+
+{s:'see',t:['View','Ticketed'],n:'One World Observatory',h:'Financial District',a:'117 West St / 285 Fulton St',lat:40.7127,lng:-74.0134,
+ o:'Roughly 09:00–21:00',
+ d:'Floors 100–102 of the tallest building in the country. The elevator ride, which time-lapses 500 years of Manhattan on the walls, is arguably better than the view.',
+ tip:'Of the four big downtown/midtown decks, this one looks <i>down</i> at the city. Top of the Rock looks <i>at</i> it — and includes the Empire State Building in the shot.'},
+
+{s:'see',t:['Free','Architecture'],n:'Oculus & the WTC Transportation Hub',h:'Financial District',a:'Church St at Fulton St',lat:40.7114,lng:-74.0110,
+ o:'Open daily, roughly 05:00–24:00',
+ d:'Santiago Calatrava\u2019s white ribbed cavern — part station, part mall, part cathedral. Every 11 September the central skylight is opened.',
+ f:['free|Free']},
+
+{s:'see',t:['Free','History'],n:'St. Paul\u2019s Chapel',h:'Financial District',a:'209 Broadway',lat:40.7112,lng:-74.0095,
+ o:'Roughly 10:00–18:00',
+ d:'Manhattan\u2019s oldest surviving church building (1766). George Washington prayed here after his inauguration; in 2001 it became the round-the-clock refuge for recovery workers, and the memorials from that autumn are still inside.',
+ f:['free|Free']},
+
+{s:'see',t:['Free','History'],n:'Trinity Church & Churchyard',h:'Financial District',a:'89 Broadway at Wall St',lat:40.7081,lng:-74.0125,
+ o:'Church roughly 08:30–18:00; churchyard daylight hours',
+ d:'The Gothic Revival spire that closed the top of Wall Street, and the graveyard where Alexander Hamilton, Eliza Schuyler Hamilton and Robert Fulton are buried.',
+ f:['free|Free']},
+
+{s:'see',t:['Free','History'],n:'Federal Hall National Memorial',h:'Financial District',a:'26 Wall St',lat:40.7073,lng:-74.0102,
+ o:'Generally weekdays only — closed most weekends',
+ d:'Washington took the oath of office on this site in 1789 and the first Congress met here. The current 1842 building is a Greek Revival customs house.',
+ f:['warn|Weekdays'],
+ tip:'Worth walking past on the weekend for the Washington statue and the Wall Street canyon even when the doors are shut.'},
+
+{s:'see',t:['Free','Icon'],n:'Charging Bull & Fearless Girl',h:'Financial District',a:'Bowling Green / 11 Wall St',lat:40.7056,lng:-74.0134,
+ o:'Always',
+ d:'Arturo Di Modica installed the bull illegally overnight in 1989. Fearless Girl now stands opposite the Stock Exchange, a few blocks away.',
+ f:['free|Free'],
+ tip:'Before 08:00 you get the bull to yourself. After 10:00 there is a queue and a lot of people photographing its testicles.'},
+
+{s:'see',t:['Museum'],n:'Museum of Jewish Heritage',h:'Battery Park City',a:'36 Battery Pl',lat:40.7060,lng:-74.0187,
+ o:'Closed Saturdays; typically Sun–Thu to 17:00, Fri to 15:00',
+ d:'A living memorial to the Holocaust, structured around Jewish life before, during and after — with the Garden of Stones by Andy Goldsworthy on the terrace.',
+ f:['warn|Closed Sat']},
+
+{s:'see',t:['Museum','Small'],n:'The Skyscraper Museum',h:'Battery Park City',a:'39 Battery Pl',lat:40.7053,lng:-74.0181,
+ o:'Limited days; typically afternoons Wed–Sun',
+ d:'One room, mirrored floor and ceiling, and the clearest explanation anywhere of why Manhattan looks the way it does. Cheap and quick.',
+ tip:'Pair with a walk up Broadway, reading the buildings you have just learned about.'},
+
+{s:'see',t:['Waterfront','Free'],n:'South Street Seaport & Pier 17',h:'Seaport',a:'89 South St',lat:40.7061,lng:-74.0027,
+ o:'Cobbles always open; Tin Building roughly 11:00–21:00',
+ d:'Belgian-block streets, 19th-century counting houses, tall ships at the pier, and a rooftop that becomes a concert venue in summer. The Tin Building is Jean-Georges Vongerichten\u2019s enormous market hall.',
+ tip:'The best free skyline photo in Manhattan is from the end of Pier 17, looking back at the Brooklyn Bridge with the towers behind it.'},
+
+{s:'see',t:['Walk','Free','Icon'],n:'Brooklyn Bridge',h:'Civic Center',a:'Manhattan approach at Park Row / Centre St',lat:40.7127,lng:-74.0043,
+ o:'Always. Allow 30–40 min to walk across',
+ d:'Open since 1883. Since 2021 cyclists have their own lane on the roadway, which makes the wooden promenade far more pleasant on foot.',
+ f:['free|Free'],
+ tip:'Walk Brooklyn → Manhattan for the skyline ahead of you, and go before 08:00 or after 19:00. On a holiday weekend at midday it is a slow-moving crowd.'},
+
+{s:'see',t:['Free','Neighborhood'],n:'Chinatown & Columbus Park',h:'Chinatown',a:'Mulberry St at Bayard St',lat:40.7146,lng:-74.0002,
+ o:'Park daylight hours',
+ d:'The largest Chinese enclave in the Western Hemisphere. In Columbus Park at 08:00 there is tai chi, at 14:00 there are card games and erhu players. Doyers Street\u2019s dogleg is the most photographed alley downtown.',
+ f:['free|Free']},
+
+{s:'see',t:['Museum','History'],n:'Museum at Eldridge Street',h:'Lower East Side',a:'12 Eldridge St',lat:40.7146,lng:-73.9932,
+ o:'Closed Saturdays; typically Sun–Thu, Fri short day',
+ d:'An 1887 Moorish Revival synagogue that was left to rot for decades and painstakingly restored. The east window is a 2010 Kiki Smith design.',
+ f:['warn|Closed Sat']},
+
+{s:'see',t:['Museum','History'],n:'Tenement Museum',h:'Lower East Side',a:'103 Orchard St',lat:40.7188,lng:-73.9887,
+ o:'Guided tours only, roughly 10:00–18:00',
+ d:'Restored apartments at 97 and 103 Orchard Street, each telling one immigrant family\u2019s story — Irish, German-Jewish, Italian, Puerto Rican, Chinese. The single best history hour downtown.',
+ f:['warn|Book ahead'],
+ tip:'Tours sell out on holiday weekends. Book the day you decide to go, not the morning of.',
+ l:[['tenement.org','https://www.tenement.org/']]},
+
+{s:'see',t:['Museum','Art'],n:'International Center of Photography',h:'Lower East Side',a:'84 Ludlow St',lat:40.7178,lng:-73.9878,
+ o:'Closed Mon–Tue; typically Wed–Sun',
+ d:'The city\u2019s only museum devoted entirely to photography, now on a Lower East Side corner with a bookshop worth the visit on its own.'},
+
+{s:'see',t:['Museum','Art'],n:'New Museum',h:'Bowery',a:'235 Bowery',lat:40.7223,lng:-73.9927,
+ o:'Closed Mon–Tue; typically Wed–Sun 11:00–18:00',
+ d:'SANAA\u2019s stack of off-kilter white boxes, now roughly doubled by an adjoining OMA-designed building. Contemporary art, no permanent collection.',
+ f:['warn|Between shows'],
+ tip:'The big autumn slate — Arthur Jafa, Diego Marcon and <i>The Bowery: Devil\u2019s Mile</i> — opens 25 September. Check what is actually hanging before you make the trip this weekend.',
+ l:[['newmuseum.org','https://www.newmuseum.org/']]},
+
+{s:'see',t:['Park','Free'],n:'Washington Square Park',h:'Greenwich Village',a:'Fifth Ave at Waverly Pl',lat:40.7308,lng:-73.9973,
+ o:'06:00–24:00',
+ d:'A former potter\u2019s field turned parade ground turned the loudest, most democratic 9.75 acres in the city: chess hustlers, a grand piano, a falcon, NYU students, and Stanford White\u2019s marble arch.',
+ f:['free|Free'],
+ tip:'This weekend the sidewalks just east of the park host the Washington Square Outdoor Art Exhibit — see <span class="jumpref" data-go="weekend">This Weekend</span>.'},
+
+{s:'see',t:['Free','History'],n:'Stonewall National Monument',h:'West Village',a:'Christopher Park, 51–53 Christopher St',lat:40.7338,lng:-74.0021,
+ o:'Park daylight hours; the bar keeps its own hours',
+ d:'The first US national monument to LGBTQ history: a small triangular park, George Segal\u2019s white sculptures, and the bar opposite where the June 1969 uprising began.',
+ f:['free|Free']},
+
+{s:'see',t:['Walk','Free','Icon'],n:'The High Line',h:'Chelsea / Meatpacking',a:'Gansevoort St to W 34th St',lat:40.7395,lng:-74.0080,
+ o:'Roughly 07:00–22:00 in September',
+ d:'An elevated freight line replanted by Piet Oudolf as a mile-and-a-half of prairie above the West Side. Late summer is when the grasses look best.',
+ f:['free|Free'],
+ tip:'Enter at Gansevoort (south end, next to the Whitney) and walk north. It is one-way-ish and jammed between 12:00 and 17:00; go at 08:00 or after 19:00.'},
+
+{s:'see',t:['Park','Free','Waterfront'],n:'Little Island',h:'Hudson River Park',a:'Pier 55 at W 13th St',lat:40.7419,lng:-74.0106,
+ o:'Park roughly 06:00–23:00; free entry',
+ d:'Thomas Heatherwick\u2019s park on 132 concrete tulips, floating over the wreck of Pier 54 — where the <i>Carpathia</i> landed the Titanic survivors in 1912.',
+ f:['free|Free'],
+ tip:'The 2026 performance season ends on Sunday 6 September. Both the free 17:00 shows and the $25 evening shows run all three of your days — see <span class="jumpref" data-go="weekend">This Weekend</span>.',
+ l:[['littleisland.org','https://littleisland.org/']]},
+
+{s:'see',t:['Museum','Art'],n:'Whitney Museum of American Art',h:'Meatpacking District',a:'99 Gansevoort St',lat:40.7396,lng:-74.0089,
+ o:'Closed Tuesdays; typically 10:30–18:00, Fridays late',
+ d:'Renzo Piano\u2019s asymmetric hull at the foot of the High Line, with outdoor terraces stepping down toward the river. American art from 1900 to this morning.',
+ tip:'On now: the <b>Whitney Biennial 2026</b> (to 12 Oct), <b>Andy Warhol Family Album</b> (to 19 Oct) and <b>Minnie Evans</b> (to 10 Jan). <b>Roy Lichtenstein: 1997</b> opens Saturday 5 September.',
+ l:[['whitney.org','https://whitney.org/']]},
+
+{s:'see',t:['Market','Food'],n:'Chelsea Market',h:'Chelsea',a:'75 Ninth Ave',lat:40.7424,lng:-74.0061,
+ o:'Roughly 07:00–22:00',
+ d:'The old Nabisco factory where the Oreo was invented, now a brick-and-pipe food concourse. Touristy, genuinely good at the edges.',
+ tip:'Los Tacos No. 1, Very Fresh Noodles and the Lobster Place are the reasons to come. Go at 11:00 or 15:00, never at 13:00.'},
+
+{s:'see',t:['Art','Free'],n:'Chelsea gallery district',h:'Chelsea',a:'W 19th–27th Sts, between Tenth & Eleventh Aves',lat:40.7480,lng:-74.0055,
+ o:'Most galleries Tue–Sat 10:00–18:00; closed Sun & Mon',
+ d:'Several hundred commercial galleries in a twenty-block grid. Free, no appointment, walk in off the street.',
+ f:['free|Free','warn|Awkward timing'],
+ tip:'The autumn season opens 10–11 September, a few days after you leave, so this weekend Chelsea is quiet and many spaces are between shows. Dia Chelsea and Pace stay open and are worth the walk regardless.'},
+
+{s:'see',t:['Art','Free'],n:'Dia Chelsea',h:'Chelsea',a:'537 W 22nd St',lat:40.7476,lng:-74.0056,
+ o:'Typically Wed–Sun; free admission',
+ d:'Dia\u2019s Manhattan space, currently showing <b>David Lamelas: The Machine</b>, a full survey of the Argentine conceptualist, through mid-January.',
+ f:['free|Free']},
+
+{s:'see',t:['View','Ticketed'],n:'Edge & The Vessel, Hudson Yards',h:'Hudson Yards',a:'20 Hudson Yards, 30th St at Tenth Ave',lat:40.7538,lng:-74.0021,
+ o:'Edge roughly 10:00–22:00',
+ d:'The highest open-air deck in the Western Hemisphere, cantilevered 80 feet out with a glass floor panel. Below it, Heatherwick\u2019s copper stair-sculpture, reopened with new safety netting.',
+ tip:'City Climb — harnessed, up the outside of the building — leaves from the same lobby if the deck is not enough.'},
+
+{s:'see',t:['Art','Ticketed'],n:'The Shed',h:'Hudson Yards',a:'545 W 30th St',lat:40.7546,lng:-74.0021,
+ o:'Varies by programme',
+ d:'A cultural centre with a telescoping shell that rolls out over the plaza on rails. Programming swings from Björk to Broadway try-outs.',
+ tip:'<b>The Black Mirror Experience</b> closes Sunday 6 September — your last chance. <b>Doug Aitken: Lightscape</b>, a free seven-screen installation, runs to 13 September.'},
+
+{s:'see',t:['Park','Free'],n:'Madison Square Park',h:'Flatiron',a:'Fifth Ave at E 23rd St',lat:40.7411,lng:-73.9897,
+ o:'06:00–23:00',
+ d:'The best place to stand and look at the Flatiron Building, plus a rotating public art commission, a dog run with a social hierarchy, and the original Shake Shack kiosk.',
+ f:['free|Free']},
+
+{s:'see',t:['Market','Food','Free'],n:'Union Square Greenmarket',h:'Union Square',a:'E 17th St at Broadway',lat:40.7359,lng:-73.9911,
+ o:'Mon, Wed, Fri, Sat 08:00–18:00',
+ d:'The city\u2019s flagship farmers\u2019 market, running since 1976. Early September is peak tomato, corn and peach.',
+ f:['free|Free'],
+ tip:'Saturday is the big day — around 140 stalls. It is a market, not an attraction, which is exactly why it is worth an hour.'},
+
+{s:'see',t:['View','Icon','Ticketed'],n:'Empire State Building',h:'Midtown South',a:'20 W 34th St',lat:40.7484,lng:-73.9857,
+ o:'Roughly 09:00–24:00, last elevator 23:15',
+ d:'1931, 102 storeys, and still the building the city is named after in everyone\u2019s head. The 86th-floor deck is open-air; the 102nd is glassed and costs more.',
+ tip:'Late slots (after 22:00) are the least crowded and the city looks better lit. The second-floor museum exhibit before the lift is unexpectedly good.'},
+
+{s:'see',t:['Museum','Art'],n:'The Morgan Library & Museum',h:'Murray Hill',a:'225 Madison Ave',lat:40.7492,lng:-73.9814,
+ o:'Closed Mondays; typically Tue–Sun 10:30–17:00, Fri late',
+ d:'J. P. Morgan\u2019s private library — three tiers of walnut bookcases, a Gutenberg Bible, a painted ceiling — wrapped in a Renzo Piano court.',
+ tip:'On now: <b>Tarot! Renaissance Symbols, Modern Visions</b> (to 4 Oct), <b>Hujar: Contact</b> (to 25 Oct), and the Dunlap broadside of the Declaration of Independence (to 13 Sep).',
+ l:[['themorgan.org','https://www.themorgan.org/']]},
+
+{s:'see',t:['Free','Architecture'],n:'New York Public Library, Schwarzman Building',h:'Midtown',a:'476 Fifth Ave at 42nd St',lat:40.7532,lng:-73.9822,
+ o:'Typically Mon–Sat from 10:00, Sunday afternoons; check holiday hours',
+ d:'Patience and Fortitude on the steps, the Rose Main Reading Room upstairs, and the free Polonsky Exhibition downstairs with a Gutenberg Bible, Jefferson\u2019s handwritten Declaration and the original Winnie-the-Pooh toys.',
+ f:['free|Free']},
+
+{s:'see',t:['Park','Free'],n:'Bryant Park',h:'Midtown',a:'Sixth Ave between 40th & 42nd Sts',lat:40.7536,lng:-73.9832,
+ o:'Roughly 07:00–22:00',
+ d:'A formal lawn behind the library with free chairs, a carousel, ping-pong, a reading room and the best public toilets in New York — a claim the park itself makes.',
+ f:['free|Free']},
+
+{s:'see',t:['Free','Architecture','Icon'],n:'Grand Central Terminal',h:'Midtown East',a:'89 E 42nd St',lat:40.7527,lng:-73.9772,
+ o:'Roughly 05:15–02:00',
+ d:'1913, and the reason America has a historic-preservation movement. The ceiling\u2019s zodiac is painted backwards; the Whispering Gallery outside the Oyster Bar works exactly as advertised.',
+ f:['free|Free'],
+ tip:'Stand on the west balcony stairs for the shot. Then go downstairs and eat something — the dining concourse is far better than a train station deserves.'},
+
+{s:'see',t:['View','Ticketed'],n:'SUMMIT One Vanderbilt',h:'Midtown East',a:'45 E 42nd St',lat:40.7527,lng:-73.9787,
+ o:'Roughly 09:00–22:00',
+ d:'Less an observation deck than a mirrored art installation you happen to be 1,000 feet up inside. Includes Ascent, a glass lift on the outside of the building.',
+ tip:'Wear something you don\u2019t mind seeing reflected upward. Skirts and the mirrored floor are a known problem.'},
+
+{s:'see',t:['Free','Architecture'],n:'Chrysler Building lobby',h:'Midtown East',a:'405 Lexington Ave',lat:40.7516,lng:-73.9755,
+ o:'Weekday business hours only',
+ d:'The finest Art Deco interior in the city: red Moroccan marble, chrome, and an Edward Trumbull ceiling mural of aeroplanes and the building itself. No observation deck — it closed in 1945.',
+ f:['free|Free','warn|Weekdays']},
+
+{s:'see',t:['Icon','Free'],n:'Times Square & the TKTS booth',h:'Theater District',a:'Broadway at W 47th St',lat:40.7580,lng:-73.9855,
+ o:'Always; TKTS from roughly 15:00 for evening shows',
+ d:'Around 350,000 people cross it every day and almost none of them live here. Go once, at night, look up, then leave. The red steps hide the discount theatre booth underneath.',
+ f:['free|Free'],
+ tip:'Do not eat in Times Square. Walk four blocks west into Hell\u2019s Kitchen or four blocks east and you are in a different city.'},
+
+{s:'see',t:['Theatre','Ticketed'],n:'The Broadway theatres',h:'Theater District',a:'41st–54th Sts between Sixth & Ninth Aves',lat:40.7590,lng:-73.9870,
+ o:'Evenings 19:00 or 20:00; matinees Wed, Sat, Sun',
+ d:'Forty-one houses inside half a square mile. On this weekend the board runs from <i>Hamilton</i>, <i>Wicked</i>, <i>The Lion King</i> and <i>MJ</i> to <i>Stranger Things: The First Shadow</i>, <i>Buena Vista Social Club</i>, <i>Maybe Happy Ending</i>, <i>Just In Time</i>, <i>Schmigadoon!</i> and a new <i>Rocky Horror Show</i>.',
+ f:['warn|Book ahead'],
+ tip:'Broadway Week (two-for-one tickets) starts 8 September — two days after you leave. For this weekend use TodayTix rush, digital lotteries, or the TKTS booth for same-day seats.',
+ l:[['TKTS at Times Square','https://www.tdf.org/tkts/']]},
+
+{s:'see',t:['View','Icon','Ticketed'],n:'Top of the Rock',h:'Midtown',a:'45 Rockefeller Plaza',lat:40.7587,lng:-73.9787,
+ o:'Roughly 09:00–24:00',
+ d:'Three open decks on the 67th–70th floors of 30 Rock, plus the newer Beam (you sit on a girder, <i>that</i> girder) and Skylift.',
+ tip:'The best skyline deck in the city, because it is the only one with the Empire State Building in front of you and Central Park behind. Book the slot around sunset — roughly 19:15 this weekend.'},
+
+{s:'see',t:['Free','Architecture'],n:'St. Patrick\u2019s Cathedral',h:'Midtown',a:'Fifth Ave at E 50th St',lat:40.7585,lng:-73.9760,
+ o:'Roughly 06:30–20:45',
+ d:'A white marble Gothic Revival cathedral marooned among skyscrapers, finished in 1878 when this was still farmland at the city\u2019s edge.',
+ f:['free|Free']},
+
+{s:'see',t:['Museum','Art'],n:'Museum of Modern Art (MoMA)',h:'Midtown',a:'11 W 53rd St',lat:40.7614,lng:-73.9776,
+ o:'Daily, roughly 10:30–17:30; Fridays to 20:00',
+ d:'<i>The Starry Night</i>, <i>Les Demoiselles d\u2019Avignon</i>, Monet\u2019s <i>Water Lilies</i> room, and the sculpture garden — the most concentrated hour of 20th-century art anywhere.',
+ f:['warn|Very busy'],
+ tip:'On now: <b>Frida and Diego: The Last Dream</b> (closes 12 Sep), <b>Architects of Liberation: Modernism in Western Africa</b>, and <b>Pierre Huyghe: UUmwelt</b> in the sculpture garden. Book the first slot of the day; by noon the fifth floor is shoulder-to-shoulder.',
+ l:[['moma.org','https://www.moma.org/']]},
+
+{s:'see',t:['Museum','Family'],n:'Intrepid Museum',h:'Hell\u2019s Kitchen',a:'Pier 86, W 46th St at Twelfth Ave',lat:40.7645,lng:-74.0000,
+ o:'Roughly 10:00–17:00, last entry 16:00',
+ d:'A WWII aircraft carrier with the space shuttle <i>Enterprise</i> on the flight deck, a Concorde on the pier and a Cold War submarine alongside.'},
+
+{s:'see',t:['Free','Transit','View'],n:'Roosevelt Island Tramway',h:'Midtown East',a:'E 59th St at Second Ave',lat:40.7614,lng:-73.9640,
+ o:'Roughly 06:00–02:00, every 7–15 min',
+ d:'An aerial cable car across the East River for the price of a subway ride. Four minutes each way, 250 feet up, alongside the Queensboro Bridge.',
+ tip:'Pay with OMNY or a MetroCard — it is a regular fare, and there is a free transfer to the subway. The best cheap thrill in the city.'},
+
+{s:'see',t:['Waterfront','Free','Walk'],n:'Hudson River Park Greenway',h:'West Side',a:'Battery Park to W 59th St',lat:40.7300,lng:-74.0113,
+ o:'Always',
+ d:'A continuous car-free path along the whole west side — the busiest bike path in the United States. Piers along the way have skate parks, mini golf, beach volleyball and a trapeze school.',
+ f:['free|Free'],
+ tip:'Citi Bike from Battery Park to Little Island takes about 25 minutes and is the single best way to understand how the island is put together.'},
+
+{s:'see',t:['Museum','History'],n:'Museum of Chinese in America',h:'Chinatown',a:'215 Centre St',lat:40.7192,lng:-74.0000,
+ o:'Closed Mon–Tue; typically Wed–Sun',
+ d:'A Maya Lin–designed space telling 160 years of Chinese American history, from the gold rush through the Exclusion Act to now.'},
+
+/* ---------------- EAT ---------------- */
+{s:'eat',t:['Book now','Italian'],n:'Carbone',h:'Greenwich Village',a:'181 Thompson St',lat:40.7280,lng:-74.0007,
+ o:'Dinner nightly; lunch selected days',
+ d:'Italian-American theatre — tuxedoed captains, tableside Caesar, and the spicy rigatoni vodka that launched a thousand imitations. Also veal parmesan the size of a hubcap.',
+ f:['warn|30 days, 10:00'],
+ tip:'Reservations drop on Resy 30 days ahead at 10:00 ET exactly. Failing that, the bar takes walk-ins and serves the full menu — queue from about 17:00.'},
+
+{s:'eat',t:['Book now','Italian'],n:'Torrisi',h:'Nolita',a:'275 Mulberry St, in the Puck Building',lat:40.7247,lng:-73.9950,
+ o:'Dinner nightly; lunch is easier',
+ d:'Rich Torrisi\u2019s Italian-American cooking filtered through the neighbourhood\u2019s Chinese, Jewish and Puerto Rican history. More interesting food than its more famous sibling.',
+ f:['warn|30 days, 10:00'],
+ tip:'The 12-seat bar serves the full menu on a first-come basis — turn up around 16:15. Lunch reservations are noticeably easier than dinner.'},
+
+{s:'eat',t:['Book now','Steak'],n:'4 Charles Prime Rib',h:'West Village',a:'4 Charles St',lat:40.7357,lng:-74.0026,
+ o:'Dinner nightly',
+ d:'A dark 40-seat basement doing prime rib, a French dip, and a burger people organise their month around. The hardest ordinary-sized reservation in the city.',
+ f:['warn|Near-impossible'],
+ tip:'Assume you will not get a table. Try the bar at opening on a weeknight, or set a Resy notify and accept whatever time appears.'},
+
+{s:'eat',t:['Book now','Indian'],n:'Semma',h:'West Village',a:'60 Greenwich Ave',lat:40.7365,lng:-74.0010,
+ o:'Dinner nightly',
+ d:'South Indian cooking with no apology and no anglicising: gunpowder dosa, whole goat biryani, oxtail with pepper. Widely argued to be the best restaurant in New York right now.',
+ f:['warn|Book far ahead'],
+ tip:'If Semma is gone, its sibling Dhamaka on Delancey Street runs the same philosophy for other Indian regions, and is fractionally easier.'},
+
+{s:'eat',t:['Book now','American'],n:'The Polo Bar',h:'Midtown',a:'1 E 55th St',lat:40.7614,lng:-73.9748,
+ o:'Dinner Tue–Sat, roughly',
+ d:'Ralph Lauren\u2019s clubhouse: saddle leather, equestrian oil paintings, a corned beef sandwich, and a room full of people pretending not to look at each other.',
+ f:['warn|Phone only','warn|Jacket'],
+ tip:'Not on any app. Call 212-207-8562 the moment the reservations office opens at 10:00, exactly one month ahead by calendar date. Same-day calls just before service sometimes land.'},
+
+{s:'eat',t:['Book now','Korean'],n:'COQODAQ',h:'Flatiron',a:'13 E 22nd St',lat:40.7401,lng:-73.9887,
+ o:'Dinner nightly',
+ d:'A cathedral to Korean fried chicken with a 1,000-bottle champagne list and a hand-towel ritual. From the Atomix team, which is why it is not a novelty.',
+ f:['warn|13 days, 10:00'],
+ tip:'The booking window is only 13 days — shorter than most, so people miss it. Set an alarm for 10:00 on 22 or 23 August equivalent for your dates.'},
+
+{s:'eat',t:['Book now','Tasting'],n:'Eleven Madison Park',h:'Flatiron',a:'11 Madison Ave',lat:40.7415,lng:-73.9873,
+ o:'Dinner; limited lunches',
+ d:'Three Michelin stars, an Art Deco room over Madison Square Park, and an entirely plant-based tasting menu since 2021. Divisive, technically extraordinary.',
+ f:['warn|Weeks ahead']},
+
+{s:'eat',t:['Book now','Seafood','Tasting'],n:'Le Bernardin',h:'Midtown',a:'155 W 51st St',lat:40.7617,lng:-73.9819,
+ o:'Lunch Mon–Fri, dinner Mon–Sat',
+ d:'Eric Ripert\u2019s seafood restaurant has held three stars since 2005 and is the closest thing New York has to a fixed point. The menu is organised as Almost Raw / Barely Touched / Lightly Cooked.',
+ f:['warn|30 days'],
+ tip:'Weekday lunch is the way in: same kitchen, far easier booking, roughly half the money.'},
+
+{s:'eat',t:['Book now','Korean','Tasting'],n:'Jungsik',h:'Tribeca',a:'2 Harrison St',lat:40.7195,lng:-74.0090,
+ o:'Dinner Tue–Sat, roughly',
+ d:'The first Korean restaurant in the United States to hold three Michelin stars. Korean flavours through French technique in a quiet Tribeca corner building.',
+ f:['warn|Book ahead']},
+
+{s:'eat',t:['Book now','Korean','Tasting'],n:'Atomix',h:'NoMad',a:'104 E 30th St',lat:40.7442,lng:-73.9829,
+ o:'Dinner, counter seatings',
+ d:'Junghyun Park\u2019s 14-seat counter, where each course arrives with a printed card explaining the ingredient. Two stars and the most thoughtful meal in the city.',
+ f:['warn|Book ahead']},
+
+{s:'eat',t:['Book now','Korean','Steak'],n:'COTE Korean Steakhouse',h:'Flatiron',a:'16 W 22nd St',lat:40.7411,lng:-73.9917,
+ o:'Lunch and dinner daily',
+ d:'Korean barbecue crossed with an American steakhouse, dry-aging room in the window. Order the Butcher\u2019s Feast and let them run it.',
+ f:['warn|Book ahead']},
+
+{s:'eat',t:['Book now','Indian'],n:'Dhamaka',h:'Lower East Side',a:'119 Delancey St, in Essex Market',lat:40.7186,lng:-73.9877,
+ o:'Lunch and dinner daily',
+ d:'Regional Indian cooking that most Indian restaurants will not attempt — goat neck, champaran meat, doh khleh. Loud, red, and completely uncompromising.',
+ f:['warn|Book ahead']},
+
+{s:'eat',t:['Book now','Italian'],n:'Don Angie',h:'West Village',a:'103 Greenwich Ave',lat:40.7386,lng:-74.0025,
+ o:'Dinner nightly',
+ d:'Italian-American reinvented rather than restored: the chrysanthemum-shaped pinwheel lasagna, lasagna for two, and a room the size of a living room.',
+ f:['warn|30 days, 10:00']},
+
+{s:'eat',t:['Book now','Italian'],n:'Rezd\u00f4ra',h:'Flatiron',a:'27 E 20th St',lat:40.7386,lng:-73.9884,
+ o:'Dinner nightly',
+ d:'Stefano Secchi cooks Emilia-Romagna: tortellini in brodo, the "Nonna\u2019s Aged Parmesan" tasting. Hand-rolled pasta at a level almost nowhere else in the city reaches.',
+ f:['warn|Book ahead']},
+
+{s:'eat',t:['Bookable','French'],n:'Balthazar',h:'SoHo',a:'80 Spring St',lat:40.7226,lng:-73.9983,
+ o:'Breakfast through late dinner, daily',
+ d:'Keith McNally\u2019s Parisian brasserie, aged mirrors and all, running since 1997 and still the best-looking room in SoHo.',
+ tip:'Dinner needs booking; breakfast at 08:00 does not, and is the sleeper meal — pastries, eggs, the whole room to yourself.'},
+
+{s:'eat',t:['Bookable','French'],n:'Frenchette',h:'Tribeca',a:'241 W Broadway',lat:40.7192,lng:-74.0060,
+ o:'Dinner Tue–Sat, roughly',
+ d:'From the pair who ran Balthazar\u2019s kitchens: duck frites, a serious natural wine list, and bentwood chairs under a curved ceiling.'},
+
+{s:'eat',t:['Bookable','French'],n:'Le Coucou',h:'SoHo',a:'138 Lafayette St',lat:40.7192,lng:-73.9989,
+ o:'Dinner nightly; weekend lunch',
+ d:'High French with the frills intact — quenelle de brochet, tout le lapin — in a candlelit room by Roman & Williams.'},
+
+{s:'eat',t:['Walk in','American'],n:'Gramercy Tavern',h:'Flatiron',a:'42 E 20th St',lat:40.7387,lng:-73.9882,
+ o:'Lunch and dinner daily',
+ d:'Two restaurants in one building. The dining room takes reservations and serves tasting menus; the front Tavern takes none and serves à la carte.',
+ f:['ok|Tavern: no res'],
+ tip:'Walk into the Tavern room at 17:30 and put your name down. Same kitchen, no booking, half the ceremony.'},
+
+{s:'eat',t:['Bookable','American'],n:'Union Square Cafe',h:'Union Square',a:'101 E 19th St',lat:40.7370,lng:-73.9880,
+ o:'Lunch and dinner daily',
+ d:'Danny Meyer\u2019s first restaurant, 1985, and the template for how New York does gracious. Bar seats, a market-driven menu, no attitude.'},
+
+{s:'eat',t:['Walk in','Steak','Historic'],n:'Keens Steakhouse',h:'Midtown South',a:'72 W 36th St',lat:40.7501,lng:-73.9856,
+ o:'Lunch weekdays, dinner nightly',
+ d:'Open since 1885, with 50,000 clay churchwarden pipes on the ceiling belonging to members past. The mutton chop is the order — nobody else in America still serves one.',
+ f:['ok|Pub room walk-in'],
+ tip:'The dining rooms need booking. The pub room takes walk-ins, serves the same mutton chop, and has a better whisky list.'},
+
+{s:'eat',t:['Bookable','Burger','Historic'],n:'Minetta Tavern',h:'Greenwich Village',a:'113 MacDougal St',lat:40.7295,lng:-74.0002,
+ o:'Dinner nightly; weekend lunch',
+ d:'A 1937 bar with caricatures on the walls and the Black Label Burger — dry-aged beef, caramelised onions, and a price that still shocks people.'},
+
+{s:'eat',t:['Walk in','French','Burger'],n:'Raoul\u2019s',h:'SoHo',a:'180 Prince St',lat:40.7262,lng:-74.0012,
+ o:'Dinner nightly, late',
+ d:'A 1975 French bistro with a fortune teller\u2019s tarot booth upstairs and steak au poivre downstairs. The burger is only served at the bar and only a dozen or so a night.',
+ f:['ok|Bar walk-in'],
+ tip:'Get to the bar when doors open if you want the burger. It sells out fast and they will not save one.'},
+
+{s:'eat',t:['Bookable','Italian'],n:'L\u2019Artusi',h:'West Village',a:'228 W 10th St',lat:40.7345,lng:-74.0060,
+ o:'Dinner nightly',
+ d:'Two floors of confident modern Italian — the ricotta, the olive-oil cake, the pastas — and one of the better Italian wine lists downtown.'},
+
+{s:'eat',t:['Bookable','Small plates'],n:'Estela',h:'Nolita',a:'47 E Houston St',lat:40.7247,lng:-73.9945,
+ o:'Dinner nightly',
+ d:'Up a narrow staircase: beef tartare with sunflower seeds, endive with walnuts and ubriaco rosso, burrata with salsa verde. Small, loud, exceptional.'},
+
+{s:'eat',t:['Walk in','Italian','Institution'],n:'Via Carota',h:'West Village',a:'51 Grove St',lat:40.7332,lng:-74.0027,
+ o:'Lunch and dinner daily',
+ d:'Jody Williams and Rita Sodi\u2019s rustic Italian: the svizzerina, cacio e pepe, and an insalata verde with a following of its own.',
+ f:['ok|No reservations'],
+ tip:'No bookings, ever. Put your name in, then wait across the street at Bar Pisellino with a negroni sbagliato. Expect 60–90 minutes on a Saturday.'},
+
+{s:'eat',t:['Walk in','Italian'],n:'I Sodi',h:'West Village',a:'314 Bleecker St',lat:40.7331,lng:-74.0044,
+ o:'Dinner nightly',
+ d:'Rita Sodi\u2019s Florentine kitchen — lasagna of twenty paper-thin layers, carciofi alla giudia, and the best negroni in the city, by fairly wide agreement.',
+ f:['warn|Hard booking'],
+ tip:'Reservations are difficult; the bar seats are walk-in and turn over. Go at 17:30.'},
+
+{s:'eat',t:['Walk in','Deli','Institution'],n:'Katz\u2019s Delicatessen',h:'Lower East Side',a:'205 E Houston St',lat:40.7223,lng:-73.9874,
+ o:'Daily; open very late Friday and Saturday',
+ d:'Since 1888. Hand-carved pastrami on rye with mustard, a pickle, and no negotiation. Also the <i>When Harry Met Sally</i> table, which is signposted.',
+ f:['ok|No reservations','cash|Keep your ticket'],
+ tip:'Take a ticket at the door and do not lose it. Go to the carving counter, not the table service — tip the carver a couple of dollars and he will hand you a warm sample while he works.'},
+
+{s:'eat',t:['Walk in','Deli','Institution'],n:'Russ & Daughters',h:'Lower East Side',a:'179 E Houston St (shop) / 127 Orchard St (cafe)',lat:40.7226,lng:-73.9880,
+ o:'Shop from 08:00 daily; cafe from 09:00',
+ d:'An appetizing store since 1914 — smoked salmon, sable, whitefish, and the four kinds of cured fish New York quietly runs on. The Orchard Street cafe sits you down for it.',
+ f:['ok|No reservations'],
+ tip:'The shop counter is for takeaway and is faster. Take a bagel with Gaspé Nova and a black coffee to a bench on Houston.'},
+
+{s:'eat',t:['Walk in','Pizza','Cheap'],n:'Joe\u2019s Pizza',h:'Greenwich Village',a:'7 Carmine St',lat:40.7304,lng:-74.0026,
+ o:'Daily until very late',
+ d:'The plain slice against which every other New York slice is measured. Since 1975. No seats to speak of; eat it folded, standing up.',
+ f:['ok|No reservations','cash|Cash-friendly']},
+
+{s:'eat',t:['Walk in','Pizza','Cheap'],n:'Prince Street Pizza',h:'Nolita',a:'27 Prince St',lat:40.7229,lng:-73.9946,
+ o:'Daily, midday to late',
+ d:'The spicy spring pepperoni square — a Sicilian slice with cupped pepperoni that chars into little grease bowls. The line is real and moves.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Pizza'],n:'Scarr\u2019s Pizza',h:'Lower East Side',a:'22 Orchard St',lat:40.7150,lng:-73.9909,
+ o:'Daily, midday to late',
+ d:'Mills its own flour in the basement. A wood-panelled room, natural wine, and the most quietly influential pizza of the last decade.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Pizza','Historic'],n:'John\u2019s of Bleecker Street',h:'West Village',a:'278 Bleecker St',lat:40.7317,lng:-74.0037,
+ o:'Lunch and dinner daily',
+ d:'Coal-fired whole pies since 1929 in carved wooden booths. No slices — the sign has said so for ninety years — and no reservations.',
+ f:['ok|No slices, no res']},
+
+{s:'eat',t:['Walk in','Chinese','Historic'],n:'Nom Wah Tea Parlor',h:'Chinatown',a:'13 Doyers St',lat:40.7143,lng:-73.9979,
+ o:'Daily from late morning',
+ d:'Chinatown\u2019s oldest dim sum house, on the bend of Doyers Street. Order from a paper card: the original egg roll, shrimp rice rolls, har gow.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Chinese','Late'],n:'Great NY Noodletown',h:'Chinatown',a:'28 Bowery',lat:40.7148,lng:-73.9967,
+ o:'Daily until roughly 03:00–04:00',
+ d:'Formica tables, roast meats hanging in the window, and salt-baked squid at two in the morning. Chefs come here after their shifts.',
+ f:['ok|No reservations','cash|Cash preferred']},
+
+{s:'eat',t:['Walk in','Chinese','Cheap'],n:'Xi\u2019an Famous Foods',h:'Chinatown',a:'45 Bayard St (and branches)',lat:40.7150,lng:-73.9975,
+ o:'Daily, lunch through evening',
+ d:'Hand-ripped biang biang noodles with spicy cumin lamb. Started as a basement stall in Flushing; now the fastest good lunch in the city.',
+ f:['ok|Counter service','cash|Cheap']},
+
+{s:'eat',t:['Walk in','Vegetarian'],n:'Superiority Burger',h:'East Village',a:'119 Avenue A',lat:40.7261,lng:-73.9836,
+ o:'Lunch and dinner, closed some days',
+ d:'Brooks Headley\u2019s vegetarian restaurant in the old Odessa diner space. The burger is famous; the gelato and the daily specials are the reason to stay.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Ukrainian','Late'],n:'Veselka',h:'East Village',a:'144 Second Ave',lat:40.7290,lng:-73.9868,
+ o:'Daily, very long hours',
+ d:'Ukrainian diner since 1954 — pierogi, borscht, potato pancakes, at any hour of the day or night. It has become a de facto community centre since 2022.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Thai'],n:'Thai Diner',h:'Nolita',a:'186 Mott St',lat:40.7218,lng:-73.9950,
+ o:'Breakfast through dinner daily',
+ d:'Thai-American diner cooking: Thai disco fries, tom yum fried rice, roti and curry for breakfast. Brunch queues are long and worth roughly half of the wait.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Mexican','Cheap'],n:'Los Tacos No. 1',h:'Chelsea',a:'Chelsea Market, 75 Ninth Ave (and branches)',lat:40.7424,lng:-74.0061,
+ o:'Daily, midday to evening',
+ d:'Standing room only, adobada carved off the trompo, handmade tortillas. The best three-dollar bite in Manhattan.',
+ f:['ok|Counter service','cash|Cheap']},
+
+{s:'eat',t:['Walk in','Cheap','Late'],n:'The Halal Guys',h:'Midtown',a:'W 53rd St at Sixth Ave',lat:40.7614,lng:-73.9793,
+ o:'Daily, roughly 10:00 to 04:00',
+ d:'The original cart, on the corner it has occupied since 1990. Chicken over rice, white sauce, a very small amount of the red.',
+ f:['ok|Cart','cash|Cheap'],
+ tip:'The queue after 19:00 runs down the block. Go at 15:00 and eat it on the MoMA sculpture garden side of the street.'},
+
+{s:'eat',t:['Walk in','Bagels'],n:'Ess-a-Bagel',h:'Gramercy / Midtown East',a:'324 First Ave / 831 Third Ave',lat:40.7326,lng:-73.9820,
+ o:'Daily, mornings through afternoon',
+ d:'Hand-rolled, kettle-boiled, absurdly large. A plain with scallion cream cheese is the correct order; nova and a schmear is the correct splurge.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Walk in','Seafood','Historic'],n:'Grand Central Oyster Bar',h:'Midtown East',a:'Grand Central Terminal, lower level',lat:40.7524,lng:-73.9772,
+ o:'Monday–Saturday; closed Sunday',
+ d:'Under Guastavino tile vaults since 1913. Thirty kinds of oyster and an oyster pan roast made in a steam-jacketed kettle at the counter.',
+ f:['warn|Closed Sun'],
+ tip:'Sit at the curved counter, not in the dining room. Order the pan roast and watch it made in front of you.'},
+
+{s:'eat',t:['Walk in','Waterfront','Seafood'],n:'Grand Banks',h:'Tribeca',a:'Pier 25, Hudson River Park',lat:40.7204,lng:-74.0138,
+ o:'Seasonal, roughly midday to midnight',
+ d:'An oyster bar on the deck of the <i>Sherman Zwicker</i>, a 1942 wooden fishing schooner tied up at Pier 25. Sunset over New Jersey, oysters, a gin drink.',
+ f:['warn|Weather-dependent'],
+ tip:'Arrive by 17:00 on a Saturday for a sunset table — sunset is about 19:15 this weekend. If it rains, it closes.'},
+
+{s:'eat',t:['Bookable','French'],n:'Pastis',h:'Meatpacking District',a:'52 Gansevoort St',lat:40.7395,lng:-74.0060,
+ o:'Breakfast through late dinner, daily',
+ d:'The brasserie that made the Meatpacking District, closed for a decade, rebuilt tile for tile. Steak frites, a very good omelette, and a scene at every hour.'},
+
+{s:'eat',t:['Walk in','Bakery'],n:'Dominique Ansel Bakery',h:'SoHo',a:'189 Spring St',lat:40.7253,lng:-74.0035,
+ o:'Daily from 08:00',
+ d:'Where the Cronut was invented in 2013. The DKA (a caramelised kouign-amann) is the better pastry and requires no queueing.',
+ f:['ok|No reservations']},
+
+{s:'eat',t:['Market','Food'],n:'Essex Market',h:'Lower East Side',a:'88 Essex St',lat:40.7185,lng:-73.9880,
+ o:'Daily; individual stalls vary',
+ d:'A 1940 public market rehoused across the street in 2019. Still has the Puerto Rican butchers and the cheese counters, plus Dhamaka and Nom Wah Nolita upstairs.'},
+
+{s:'eat',t:['Market','Food'],n:'Urban Hawker',h:'Midtown',a:'135 W 50th St',lat:40.7608,lng:-73.9829,
+ o:'Daily, lunch through evening',
+ d:'Seventeen Singaporean and Malaysian hawker stalls brought to midtown by KF Seetoh, a project Anthony Bourdain championed before his death. Hainanese chicken rice, char kway teow, laksa.',
+ tip:'The only reason to eat within five blocks of Times Square.'},
+
+{s:'eat',t:['Market','Food'],n:'Mercado Little Spain',h:'Hudson Yards',a:'10 Hudson Yards',lat:40.7527,lng:-74.0018,
+ o:'Daily, roughly 11:00–21:00',
+ d:'José Andrés\u2019s Spanish market hall: jamón carved to order, a paella counter, churros con chocolate, and a proper vermouth bar.'},
+
+{s:'eat',t:['Market','Food'],n:'Tin Building by Jean-Georges',h:'Seaport',a:'96 South St',lat:40.7060,lng:-74.0025,
+ o:'Daily, roughly 11:00–21:00',
+ d:'A restored 1907 fish market turned into a food hall of unusual ambition — a dozen restaurants, a bakery, a chocolate shop, a bar hidden behind a door.'},
+
+{s:'eat',t:['Market','Food','Italian'],n:'Eataly NYC Flatiron',h:'Flatiron',a:'200 Fifth Ave',lat:40.7420,lng:-73.9896,
+ o:'Daily, roughly 09:00–22:00',
+ d:'The original US branch, opposite Madison Square Park. Counters for pasta, pizza, salumi and mozzarella, plus a rooftop beer garden upstairs.'},
+
+/* ---------------- DRINK ---------------- */
+{s:'drink',t:['Cocktails'],n:'Dante',h:'Greenwich Village',a:'79–81 MacDougal St',lat:40.7291,lng:-74.0022,
+ o:'Morning coffee through late night, daily',
+ d:'A café on this corner since 1915, reborn as a negroni bar with a dozen variations and a Garibaldi made with "fluffy" juice. All-day, so it works at 11:00 or 23:00.'},
+
+{s:'drink',t:['Cocktails','Late'],n:'Employees Only',h:'West Village',a:'510 Hudson St',lat:40.7337,lng:-74.0058,
+ o:'Evening until roughly 03:30',
+ d:'A psychic reads tarot in the front window; behind her is a white-jacketed bar that helped restart the cocktail revival in 2004. The kitchen serves till close.',
+ f:['warn|Busy after 22:00']},
+
+{s:'drink',t:['Cocktails'],n:'Attaboy',h:'Lower East Side',a:'134 Eldridge St',lat:40.7192,lng:-73.9915,
+ o:'Evening until late',
+ d:'In the old Milk & Honey space. No menu, no sign, no reservations — you knock, you say what you like, they build it.',
+ f:['warn|No reservations'],
+ tip:'Get there before 20:00 or expect to wait on the pavement. Tell the bartender a spirit and a mood, not a drink name.'},
+
+{s:'drink',t:['Cocktails'],n:'Double Chicken Please',h:'Lower East Side',a:'115 Allen St',lat:40.7196,lng:-73.9899,
+ o:'Evening until late',
+ d:'Front room is walk-in and beer-and-highball simple; the back room turns dishes into cocktails — Cold Pizza, Japanese Cold Noodle, Mango Sticky Rice. Repeatedly ranked among the world\u2019s best.',
+ f:['ok|Front room walk-in']},
+
+{s:'drink',t:['Cocktails'],n:'Katana Kitten',h:'West Village',a:'531 Hudson St',lat:40.7355,lng:-74.0057,
+ o:'Evening until late',
+ d:'Japanese-American drinking: highballs, a Hinoki Martini, Toki with grapefruit, and a bar snack menu that takes itself seriously.'},
+
+{s:'drink',t:['View','Cocktails'],n:'Overstory',h:'Financial District',a:'70 Pine St, 64th floor',lat:40.7062,lng:-74.0075,
+ o:'Evening',
+ d:'A small terrace bar in the crown of a 1932 Art Deco tower, looking straight down the harbour. Drinks are genuinely good, which rooftop drinks usually are not.',
+ f:['warn|Reserve']},
+
+{s:'drink',t:['View','Cocktails'],n:'Manhatta',h:'Financial District',a:'28 Liberty St, 60th floor',lat:40.7079,lng:-74.0102,
+ o:'Dinner and drinks; closed some days',
+ d:'Danny Meyer\u2019s room on the 60th floor with windows on all sides. Come for a drink at the bar even if you are not eating.'},
+
+{s:'drink',t:['Historic'],n:'The Campbell',h:'Midtown East',a:'15 Vanderbilt Ave, Grand Central',lat:40.7529,lng:-73.9775,
+ o:'Afternoon through late',
+ d:'A 1920s railway financier\u2019s private office — hand-painted ceiling, leaded windows, a fireplace — tucked into the side of Grand Central.'},
+
+{s:'drink',t:['Historic','Cash'],n:'McSorley\u2019s Old Ale House',h:'East Village',a:'15 E 7th St',lat:40.7288,lng:-73.9897,
+ o:'Daily from late morning',
+ d:'Open since 1854, sawdust on the floor, wishbones on the gas lamp left by soldiers who never came back. Two beers only: light and dark. They come two at a time.',
+ f:['cash|Cash only']},
+
+{s:'drink',t:['Historic'],n:'Ear Inn',h:'Hudson Square',a:'326 Spring St',lat:40.7261,lng:-74.0092,
+ o:'Daily, afternoon through late',
+ d:'A Federal-style house from 1817, once on the waterfront before the landfill pushed the Hudson away. A proper pub with a crooked floor.'},
+
+{s:'drink',t:['Cocktails','Hidden'],n:'Please Don\u2019t Tell (PDT)',h:'East Village',a:'113 St Marks Pl, through Crif Dogs',lat:40.7273,lng:-73.9843,
+ o:'Evening',
+ d:'Enter the hot dog shop, step into the phone booth, dial 1. Inside: taxidermy, a proper cocktail list, and hot dogs you can order at the bar.',
+ f:['warn|Call at 15:00'],
+ tip:'Same-day reservations open by phone in the afternoon. Walk-ins wait outside on the pavement, which is fine in September.'},
+
+{s:'drink',t:['Cocktails'],n:'Superbueno',h:'East Village',a:'105 First Ave',lat:40.7255,lng:-73.9868,
+ o:'Evening until late',
+ d:'Mexican-American cocktails — a horchata martini, a Bloody Maria — in a room the colour of a paleta. One of the most fun bars to open downtown in years.'},
+
+{s:'drink',t:['Cocktails'],n:'Bar Goto',h:'Lower East Side',a:'245 Eldridge St',lat:40.7222,lng:-73.9891,
+ o:'Evening',
+ d:'Kenta Goto\u2019s small bar: the Sakura Martini, sake highballs, and okonomiyaki made behind the counter. Quiet, precise, seats about thirty.'},
+
+{s:'drink',t:['Jazz','Live music'],n:'Village Vanguard',h:'West Village',a:'178 Seventh Ave S',lat:40.7361,lng:-74.0016,
+ o:'Sets nightly, roughly 20:00 and 22:00',
+ d:'A wedge-shaped basement since 1935 and the most storied jazz room on earth — Coltrane, Evans, Rollins all recorded here. The Vanguard Jazz Orchestra plays Mondays.',
+ f:['warn|Book online'],
+ tip:'No talking during sets, and they mean it. Book online; the room holds 123 people.',
+ l:[['villagevanguard.com','https://villagevanguard.com/']]},
+
+{s:'drink',t:['Jazz','Live music'],n:'Blue Note',h:'Greenwich Village',a:'131 W 3rd St',lat:40.7307,lng:-74.0006,
+ o:'Sets nightly, roughly 20:00 and 22:30',
+ d:'Bigger names, higher prices, tighter tables than the Vanguard. The late show is cheaper and looser.'},
+
+{s:'drink',t:['Jazz','Live music','Late'],n:'Smalls Jazz Club',h:'West Village',a:'183 W 10th St',lat:40.7339,lng:-74.0033,
+ o:'Sets from roughly 19:30 until 04:00',
+ d:'A basement with a cover charge, a one-drink minimum and a 01:00 jam session that runs until dawn. The best value jazz in the city.'},
+
+{s:'drink',t:['Comedy'],n:'Comedy Cellar',h:'Greenwich Village',a:'117 MacDougal St',lat:40.7300,lng:-74.0002,
+ o:'Multiple shows nightly',
+ d:'A low brick basement where every American comedian you can name drops in unannounced. Line-ups are never published in advance for that reason.',
+ f:['warn|Reserve','warn|2-item minimum']},
+
+/* ---------------- TRANSIT HUBS ---------------- */
+{s:'hub',t:['Transit'],n:'Penn Station',h:'Midtown South',a:'Seventh Ave at W 33rd St',lat:40.7506,lng:-73.9935,
+ o:'Always',
+ d:'Amtrak, NJ Transit and Long Island Rail Road below Madison Square Garden. LIRR runs direct event trains to the US Open at Mets–Willets Point.'},
+{s:'hub',t:['Transit'],n:'Port Authority Bus Terminal',h:'Theater District',a:'Eighth Ave at W 42nd St',lat:40.7570,lng:-73.9903,
+ o:'Always',
+ d:'Intercity and commuter buses, and the closest thing midtown has to a maze.'},
+{s:'hub',t:['Transit'],n:'PATH — World Trade Center',h:'Financial District',a:'Church St at Vesey St',lat:40.7114,lng:-74.0110,
+ o:'Always',
+ d:'Trains to Newark, Hoboken and Jersey City from inside the Oculus. Separate fare from the subway.'}
+];
+
+/* =======================================================================
+   NEIGHBORHOODS
+   ======================================================================= */
+const HOODS = [
+ {n:'Financial District & the Battery',b:'Broadway south of Chambers St, to the harbour',lat:40.7075,lng:-74.0110,
+  d:'Crooked colonial lanes with 60-storey towers dropped on top of them. Dead on weekends for offices, alive for tourists, and the streets are so narrow that the light only reaches the ground at noon.',
+  g:'9/11 Memorial, Trinity Church, Wall Street, the Battery, all the ferries.',
+  w:'Weekend lunch is thin here — many places serve the office crowd only Monday to Friday. Eat in the Seaport or Tribeca instead.'},
+ {n:'Tribeca',b:'Chambers St to Canal St, west of Broadway',lat:40.7195,lng:-74.0080,
+  d:'Cast-iron warehouses turned into the most expensive lofts in the city. Cobbled streets, discreet doorways, no crowds and very good restaurants.',
+  g:'Jungsik, Frenchette, Grand Banks at Pier 25, the Hudson River path.',
+  w:'The quietest walking in Lower Manhattan on a Saturday morning. Staple Street\u2019s skybridge is the photograph.'},
+ {n:'Chinatown',b:'Around Canal, Mott, Bayard and Doyers Sts',lat:40.7148,lng:-73.9975,
+  d:'Dense, loud, entirely unpolished and the best-value eating on the island. Fujianese, Cantonese, Shanghainese and Vietnamese all within four blocks.',
+  g:'Nom Wah on Doyers, Great NY Noodletown, Xi\u2019an Famous Foods, Columbus Park at 08:00.',
+  w:'Bring cash. Many of the best places take it and nothing else.'},
+ {n:'Little Italy & Nolita',b:'Mulberry St above Canal; Nolita east to the Bowery',lat:40.7215,lng:-73.9955,
+  d:'Little Italy has shrunk to about three blocks of red-sauce restaurants aimed squarely at visitors. Nolita, immediately north and east, is where the neighbourhood actually happens now: small boutiques, coffee, and some of the best restaurants downtown.',
+  g:'Torrisi, Estela, Thai Diner, Prince Street Pizza, Ferrara for cannoli.',
+  w:'The Feast of San Gennaro takes over Mulberry St from 17–27 September — after your dates, so the street is normal this weekend.'},
+ {n:'Lower East Side',b:'East of the Bowery, below Houston St',lat:40.7180,lng:-73.9880,
+  d:'A century of arrival — German, Jewish, Italian, Puerto Rican, Chinese, Bangladeshi — layered under a nightlife district. Tenement walk-ups, the best cocktail bars in the city, and the oldest food shops.',
+  g:'Katz\u2019s, Russ & Daughters, the Tenement Museum, Attaboy, Essex Market, Eldridge Street Synagogue.',
+  w:'Loud and young after 22:00 on Orchard and Ludlow. Charming and quiet before noon.'},
+ {n:'East Village',b:'Houston to 14th St, east of Broadway',lat:40.7275,lng:-73.9835,
+  d:'Punk history, Ukrainian churches, Japanese izakayas, a Bangladeshi curry row on East 6th, and Tompkins Square Park in the middle of it. Cheap by Manhattan standards, still genuinely bohemian in patches.',
+  g:'Veselka, Superiority Burger, McSorley\u2019s, Superbueno, PDT, St Marks Place.',
+  w:'The best late-night eating below 14th Street. Almost nothing here needs a reservation.'},
+ {n:'SoHo',b:'Houston to Canal, west of Lafayette',lat:40.7235,lng:-74.0010,
+  d:'The largest collection of cast-iron architecture in the world, now a shopping district. Look up above the shopfronts and it is a museum; look at street level and it is Zara.',
+  g:'Balthazar, Raoul\u2019s, Le Coucou, Greene St and Wooster St for the ironwork.',
+  w:'Broadway between Houston and Canal is the most crowded pavement downtown on a Saturday. Use Greene, Mercer or Wooster instead.'},
+ {n:'Greenwich Village & the West Village',b:'Houston to 14th St, west of Broadway',lat:40.7330,lng:-74.0030,
+  d:'The one part of Manhattan that ignores the grid — the streets predate it and wander accordingly, which is why West 4th crosses West 10th. Low brick townhouses, tiny restaurants, and more good dinner per block than anywhere else in the city.',
+  g:'Via Carota, I Sodi, Semma, 4 Charles, Village Vanguard, Washington Square Park, Stonewall.',
+  w:'This is where to stay and where to wander without a plan. Take Bedford, Grove, Commerce and Barrow.'},
+ {n:'Meatpacking District',b:'Gansevoort St to W 15th St, west of Ninth Ave',lat:40.7405,lng:-74.0070,
+  d:'Belgian block, old loading docks, and the point where the Whitney, the High Line and Little Island all meet. Ten years ago this was a nightclub district; now it is a museum district that closes early.',
+  g:'The Whitney, High Line south entrance, Little Island, Pastis, Chelsea Market.',
+  w:'The cobbles are genuinely ankle-turning. Wrong shoes here will end the day.'},
+ {n:'Chelsea',b:'14th to 34th St, west of Sixth Ave',lat:40.7460,lng:-74.0010,
+  d:'Row houses and public housing to the east, several hundred art galleries to the west, the High Line running through the middle, and the historic centre of gay New York along Eighth Avenue.',
+  g:'Gallery district, Dia Chelsea, Chelsea Market, the High Line, Hudson River piers.',
+  w:'Galleries close Sunday and Monday, and the autumn season opens 10–11 September — the weekend after yours. Plan gallery walking for Friday or Saturday.'},
+ {n:'Flatiron, NoMad & Union Square',b:'14th to 30th St, around Broadway and Fifth Ave',lat:40.7405,lng:-73.9890,
+  d:'Where the grid produces its best accident: Broadway cutting across Fifth Avenue and leaving a triangle for the Flatiron Building. Excellent restaurants, the city\u2019s main greenmarket, and the least touristed good hotels.',
+  g:'Eleven Madison Park, COQODAQ, Cote, Rezdôra, Gramercy Tavern, Eataly, Union Square Greenmarket.',
+  w:'A very good base: 20 minutes\u2019 walk to the Village, 20 minutes to midtown, and every subway line within four blocks.'},
+ {n:'Koreatown',b:'W 32nd St between Fifth Ave and Broadway',lat:40.7476,lng:-73.9870,
+  d:'One block, stacked vertically — barbecue on the second floor, karaoke on the third, a bakery on the fourth, all of it open until 04:00. Signposted in Korean first.',
+  g:'Late-night barbecue, 24-hour soft tofu stew, Paris Baguette at 02:00.',
+  w:'The single best answer to "it is 01:00 and I am hungry" in midtown.'},
+ {n:'Midtown West & the Theater District',b:'34th to 59th St, west of Sixth Ave',lat:40.7590,lng:-73.9860,
+  d:'Broadway, Times Square, and the highest density of people per square foot in North America. Hell\u2019s Kitchen, west of Eighth Avenue, is the residential half and a much nicer place to eat.',
+  g:'Broadway theatres, Top of the Rock, MoMA, Urban Hawker, the Intrepid.',
+  w:'Everything is a ten-minute walk from everything, and every walk takes twenty minutes because of the pavement crowds. Build that in.'},
+ {n:'Midtown East, Grand Central & Murray Hill',b:'34th to 59th St, east of Sixth Ave',lat:40.7520,lng:-73.9750,
+  d:'Corporate towers, Art Deco landmarks and the terminal that anchors all of it. Empties out on a holiday weekend, which makes it unusually pleasant to walk.',
+  g:'Grand Central, the Chrysler lobby, the Morgan Library, SUMMIT, the Roosevelt Island tram.',
+  w:'Weekend lunch options are limited near the offices. Grand Central\u2019s dining concourse is the reliable fallback.'},
+ {n:'Hudson Yards',b:'W 30th to 34th St, west of Tenth Ave',lat:40.7540,lng:-74.0010,
+  d:'A city built over a rail yard in a decade. Glass, retail, and three of the most photographed structures of the last ten years. Not everyone likes it; nobody is neutral.',
+  g:'Edge, The Vessel, The Shed, Mercado Little Spain, the northern High Line.',
+  w:'The 7 train ends here, which makes it a very fast run to and from Grand Central and Times Square.'}
+];
+
+/* =======================================================================
+   WEEKEND EVENTS
+   ======================================================================= */
+const EVENTS = [
+ {when:'Fri 4 – Sun 6 Sep',n:'US Open, third and fourth rounds',w:'USTA Billie Jean King National Tennis Center, Flushing Meadows, Queens',
+  d:'The 2026 tournament runs 30 August to 13 September. Friday and Saturday are third round; Sunday is fourth round, when the surviving big names play. Day sessions start at 11:00, evening sessions at 19:00.',
+  tip:'It is not in Manhattan, but it shapes your weekend anyway: hotel rates are up and the 7 train is full. Get there on the 7 from Grand Central or Times Square, or on the LIRR event service from Penn Station to Mets–Willets Point.',
+  l:[['usopen.org','https://www.usopen.org/']],c:'yellow'},
+
+ {when:'Fri 4 – Sun 6 Sep, 20:30',n:'Thomas Bartlett: Allen Ginsberg at 100',w:'The Amph, Little Island, Pier 55 at W 13th St',
+  d:'The closing run of Little Island\u2019s 2026 season: concerts and readings marking Ginsberg\u2019s centenary, curated by Thomas Bartlett with Laurie Anderson and the Ginsberg estate. Performers include Anderson, Davóne Tines, Anne Waldman and Jennifer Charles. All tickets $25.',
+  tip:'Sunday 6 September is the last night of the entire season — the island goes quiet after this. Book now if you want it.',
+  l:[['littleisland.org','https://littleisland.org/']],c:'yellow'},
+
+ {when:'Fri 4 – Sun 6 Sep, 17:00',n:'Bon Appétit live issue',w:'The Glade, Little Island — free',
+  d:'The magazine staged as a live, interactive issue in Little Island\u2019s free outdoor space. No ticket, first come.',
+  tip:'Turn up at 16:30, watch this, then walk the fifteen minutes to dinner in the West Village.',c:'yellow'},
+
+ {when:'Sat 5 & Sun 6 Sep, 12:00–18:00',n:'Washington Square Outdoor Art Exhibit',w:'University Place, between Waverly Pl and E 13th St — free',
+  d:'The 95th-odd running of a sidewalk art fair that started in 1931 when Jackson Pollock carried paintings down from his studio to pay rent. Over 100 juried artists selling directly — painting, ceramics, glass, jewellery, photography.',
+  tip:'It runs on the sidewalks <i>beside</i> the park, not inside it. The fall show traditionally covers Labor Day weekend plus the following weekend; confirm the exact 2026 dates at wsoae.org before building a morning around it.',
+  l:[['wsoae.org','http://www.wsoae.org/']],c:'yellow'},
+
+ {when:'Sat 5 Sep, opens',n:'Roy Lichtenstein: 1997 opens at the Whitney',w:'Whitney Museum, 99 Gansevoort St',
+  d:'A focused show of rarely seen work from the last year of Lichtenstein\u2019s life — prints, photographs, sculptural maquettes and studies for projects he never finished.',
+  tip:'Opening weekend, so expect company. The Whitney Biennial is upstairs on the same ticket.',
+  l:[['whitney.org','https://whitney.org/']],c:'yellow'},
+
+ {when:'Closes Sun 6 Sep',n:'The Black Mirror Experience',w:'The Shed, 545 W 30th St, Hudson Yards',
+  d:'A 60-minute mix of built sets and interactive VR that drops groups of up to six inside an original <i>Black Mirror</i> story. US debut, and Sunday is the final day.',
+  tip:'If this appeals at all, Sunday is your only chance — book before you fly.',c:'yellow'},
+
+ {when:'Closes Sat 12 Sep',n:'Frida and Diego: The Last Dream',w:'MoMA, 11 W 53rd St',
+  d:'Six Kahlo paintings and more than a dozen Riveras from MoMA\u2019s own holdings, mounted alongside the Met Opera\u2019s premiere of <i>El Último Sueño de Frida y Diego</i>. A week left when you land.',c:'yellow'},
+
+ {when:'Fri 4 – Sun 6 Sep',n:'Free and open all weekend',w:'Various',
+  d:'<b>Doug Aitken: Lightscape</b> at The Shed — a seven-screen immersive installation, free, to 13 September. <b>David Lamelas: The Machine</b> at Dia Chelsea, free. <b>David Byrne: Stairwell Drawings</b> at Pace Gallery, free, nine life-size drawings up the gallery stairwell. <b>Pierre Huyghe: UUmwelt</b> in MoMA\u2019s sculpture garden.',c:'yellow'},
+
+ {when:'Sun 6 Sep, 17:00–24:00',n:'Perreo on the Pier',w:'Watermark Beach Club, Pier 15, South St',
+  d:'An open-air reggaetón and Latin party on the East River with the Brooklyn Bridge behind the decks. One of dozens of Labor Day weekend rooftop and harbour parties — Pier 36, Skyport Marina and the Hudson River piers all run boats and roof sessions Friday through Sunday.',
+  tip:'These sell out and most are 21+ with ID checks. Book ahead rather than turning up.',c:'yellow'},
+
+ {when:'Nightly',n:'Broadway, in full swing',w:'Theater District, 41st–54th Sts',
+  d:'Around 21 shows are playing. Evening curtains at 19:00 or 20:00, matinees Saturday and Sunday.',
+  tip:'Broadway Week — two-for-one tickets — begins 8 September, just after you go. This weekend, use the TKTS booth under the red steps, TodayTix rush tickets, or the individual show lotteries that draw at around 09:00 and 15:00.',c:'yellow'}
+];
+
+const NOTON = [
+ ['SummerStage','No shows in the parks on 4–6 September. The Verve 70th anniversary concert was 2 September; the next is 12 September.'],
+ ['Electric Zoo','The Randall\u2019s Island Labor Day festival is not running.'],
+ ['Labor Day fireworks','There are none in New York. This is a persistent myth.'],
+ ['West Indian American Day Carnival','Monday 7 September on Eastern Parkway, Brooklyn — the day after you leave. J\u2019Ouvert starts before dawn.'],
+ ['The labour movement\u2019s march','Moved for 2026: a rally and march from Liberty Street in Lower Manhattan on the evening of Tuesday 8 September, rather than the old Fifth Avenue parade.'],
+ ['Feast of San Gennaro','17–27 September on Mulberry Street. Not this weekend.'],
+ ['New York Fashion Week','8–15 September.'],
+ ['Broadway Week (2-for-1)','8–20 September.'],
+ ['Chelsea gallery season','Opens 10–11 September. This weekend the galleries are mostly between shows.']
+];
+
+/* =======================================================================
+   MAP GEOMETRY
+   ======================================================================= */
+const BOUNDS={lat0:40.6960,lat1:40.7800,lng0:-74.0330,lng1:-73.9430};
+const KLAT=40.738, MERC=Math.cos(KLAT*Math.PI/180);
+const MW=(BOUNDS.lng1-BOUNDS.lng0)*MERC, MH=(BOUNDS.lat1-BOUNDS.lat0);
+const SVGH=940, SVGW=Math.round(SVGH*MW/MH);
+const X=lng=>((lng-BOUNDS.lng0)*MERC/MW)*SVGW;
+const Y=lat=>((BOUNDS.lat1-lat)/MH)*SVGH;
+const path=pts=>pts.map((p,i)=>(i?'L':'M')+X(p[1]).toFixed(1)+' '+Y(p[0]).toFixed(1)).join(' ')+' Z';
+
+const MANHATTAN=[
+ [40.7003,-74.0170],[40.7040,-74.0190],[40.7080,-74.0196],[40.7120,-74.0186],
+ [40.7150,-74.0173],[40.7175,-74.0160],[40.7200,-74.0140],[40.7235,-74.0130],
+ [40.7265,-74.0122],[40.7300,-74.0113],[40.7340,-74.0110],[40.7380,-74.0108],
+ [40.7420,-74.0107],[40.7460,-74.0098],[40.7490,-74.0092],[40.7530,-74.0083],
+ [40.7560,-74.0060],[40.7590,-74.0043],[40.7620,-74.0025],[40.7660,-73.9995],
+ [40.7700,-73.9960],[40.7742,-73.9928],
+ /* the 59th St / Central Park South line */
+ [40.7681,-73.9819],[40.7644,-73.9732],[40.7615,-73.9660],[40.7595,-73.9610],[40.7580,-73.9583],
+ /* East River, going south */
+ [40.7550,-73.9600],[40.7520,-73.9640],[40.7495,-73.9678],[40.7460,-73.9695],
+ [40.7428,-73.9712],[40.7395,-73.9723],[40.7365,-73.9732],[40.7330,-73.9735],
+ [40.7295,-73.9738],[40.7260,-73.9730],[40.7225,-73.9718],[40.7190,-73.9722],
+ [40.7155,-73.9748],[40.7113,-73.9762],[40.7098,-73.9825],[40.7090,-73.9880],
+ [40.7075,-73.9950],[40.7060,-74.0020],[40.7035,-74.0090],[40.7013,-74.0125]
+];
+const NORTHOF=[ /* Manhattan above 59th St, shown greyed and out of scope */
+ [40.7742,-73.9928],[40.7790,-73.9900],[40.7800,-73.9893],
+ [40.7800,-73.9438],[40.7750,-73.9472],[40.7690,-73.9508],
+ [40.7625,-73.9558],[40.7580,-73.9583],
+ [40.7615,-73.9660],[40.7644,-73.9732],[40.7681,-73.9819]
+];
+/* the part of Manhattan that actually follows the 1811 grid: north of 14th St */
+const GRIDZONE=[
+ [40.7420,-74.0107],[40.7460,-74.0098],[40.7490,-74.0092],[40.7530,-74.0083],
+ [40.7560,-74.0060],[40.7590,-74.0043],[40.7620,-74.0025],[40.7660,-73.9995],
+ [40.7700,-73.9960],[40.7742,-73.9928],
+ [40.7681,-73.9819],[40.7644,-73.9732],[40.7615,-73.9660],[40.7595,-73.9610],[40.7580,-73.9583],
+ [40.7550,-73.9600],[40.7520,-73.9640],[40.7495,-73.9678],[40.7460,-73.9695],
+ [40.7428,-73.9712],[40.7395,-73.9723],[40.7365,-73.9732],[40.7330,-73.9735],[40.7295,-73.9752]
+];
+const NJ=[[40.6960,-74.0330],[40.7000,-74.0330],[40.7080,-74.0300],[40.7180,-74.0290],
+ [40.7300,-74.0270],[40.7450,-74.0250],[40.7600,-74.0245],[40.7800,-74.0250],
+ [40.7800,-74.0330],[40.6960,-74.0330]];
+const BKQ=[[40.6960,-74.0060],[40.7000,-73.9960],[40.7030,-73.9895],[40.7100,-73.9750],
+ [40.7220,-73.9660],[40.7350,-73.9585],[40.7450,-73.9550],[40.7600,-73.9450],
+ [40.7700,-73.9430],[40.7800,-73.9430],[40.7800,-73.9200],[40.6960,-73.9200]];
+const ROOS=[[40.7490,-73.9605],[40.7560,-73.9575],[40.7650,-73.9500],[40.7700,-73.9455],
+ [40.7708,-73.9472],[40.7658,-73.9518],[40.7568,-73.9594],[40.7496,-73.9624]];
+
+const MAPCATS={
+  see:{k:'#0039a6',l:'See'},
+  eat:{k:'#ff6319',l:'Eat'},
+  drink:{k:'#996633',l:'Drink'},
+  hub:{k:'#8d9199',l:'Transit'}
+};
+const MAPLABELS=[
+ ['FINANCIAL DISTRICT',40.7080,-74.0115],
+ ['TRIBECA',40.7185,-74.0075],['CHINATOWN',40.7160,-73.9960],
+ ['SOHO',40.7245,-74.0020],['NOLITA',40.7228,-73.9930],
+ ['LOWER EAST SIDE',40.7175,-73.9855],['EAST VILLAGE',40.7278,-73.9793],
+ ['WEST VILLAGE',40.7362,-74.0078],['GREENWICH VILLAGE',40.7288,-73.9928],
+ ['UNION SQ',40.7360,-73.9880],['MEATPACKING',40.7402,-74.0040],
+ ['CHELSEA',40.7470,-74.0020],['FLATIRON',40.7420,-73.9870],
+ ['MURRAY HILL',40.7480,-73.9760],['HUDSON YARDS',40.7550,-74.0055],
+ ['KOREATOWN',40.7462,-73.9884],['THEATER DISTRICT',40.7638,-73.9878],
+ ['MIDTOWN EAST',40.7570,-73.9700],['SEAPORT',40.7052,-73.9985]
+];
+
+/* =======================================================================
+   RENDER
+   ======================================================================= */
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const gmap=p=>'https://maps.google.com/?q='+encodeURIComponent(p.n+' '+(p.a||'')+' New York NY');
+
+function flags(f){return (f||[]).map(x=>{const [k,t]=x.split('|');return '<span class="flag '+k+'">'+t+'</span>';}).join('');}
+
+function stop(p,idx,total){
+  const links=[['Map',gmap(p)]].concat(p.l||[]);
+  return '<li class="stop'+(idx===0||idx===total-1?' term':'')+'" id="p-'+slug(p.n)+'"><div class="box">'
+   +'<span class="nm">'+p.n+'</span>'
+   +'<p class="meta"><span class="hood">'+p.h+'</span>'+(p.a?' &nbsp;·&nbsp; '+p.a:'')+(p.o?'<br>'+p.o:'')+'</p>'
+   +(p.f?'<div>'+flags(p.f)+'</div>':'')
+   +'<p>'+p.d+'</p>'
+   +(p.tip?'<div class="tip"><b>Tip</b> &nbsp;'+p.tip+'</div>':'')
+   +'<div class="links">'+links.map(l=>'<a href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>').join('')+'</div>'
+   +'</div></li>';
+}
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+
+function listFor(sec,color,items){
+  return '<ol class="line" style="--c:'+LINES[color]+'">'+items.map((p,i)=>stop(p,i,items.length)).join('')+'</ol>';
+}
+
+/* -------- section builders -------- */
+function secOverview(){
+ return `
+<p class="eyebrow">Card 1 of 9 · Orientation</p>
+<h1><span class="bul"></span>Below&nbsp;59th</h1>
+<p class="sub">Three days in the half of Manhattan that starts at the harbour and stops at Central Park South. Roughly nine square miles, fifteen neighbourhoods, and everything within them walkable if you are willing to walk.</p>
+
+<div class="grid">
+  <div class="stat"><span class="k">Dates</span><span class="v">Fri 4 – Sun 6 Sep</span><span class="n">Labor Day falls on Monday 7 September, so this is the long weekend\u2019s first three days.</span></div>
+  <div class="stat"><span class="k">Boundary</span><span class="v">Harbour → 59th St</span><span class="n">Everything in this guide sits south of Central Park. The Met, the Guggenheim and the Upper Sides are out of scope.</span></div>
+  <div class="stat"><span class="k">Weather, typically</span><span class="v">26°C / 79°F</span><span class="n">Early-September average high; nights around 19°C / 66°F. Humid, with afternoon thunderstorms possible. Peak Atlantic hurricane season — check the forecast three days out.</span></div>
+  <div class="stat"><span class="k">Daylight</span><span class="v">06:25 – 19:17</span><span class="n">Sunset is around 19:15 all weekend. That is your window for rooftops, the Brooklyn Bridge and Grand Banks.</span></div>
+</div>
+
+<h2>What makes this particular weekend different <em>Read this before you book anything</em></h2>
+<p class="lede">Three things shape it, and none of them are in Lower Manhattan.</p>
+<div class="panel rule" style="--c:var(--line-red)">
+<h3>1. The US Open is on</h3>
+<p>The tournament runs 30 August to 13 September, and your Friday, Saturday and Sunday are the third and fourth rounds. It is in Queens, but it lifts hotel rates across midtown and fills the 7 train. If you want to go, Sunday has the best draw.</p>
+<h3>2. It is a holiday weekend, but Monday is the holiday</h3>
+<p>Friday and Saturday behave like a normal busy weekend. Sunday is the getaway day, which means the city empties slightly and restaurant tables loosen. Museums stay open on Labor Day itself; the subway drops to a Sunday schedule on the Monday if you fly out then.</p>
+<h3>3. New York\u2019s autumn season starts the week after you leave</h3>
+<p>Broadway Week, Fashion Week, the Chelsea gallery openings and the Feast of San Gennaro all begin between 8 and 17 September. That is a real gap — see <span class="jumpref" data-go="weekend">This Weekend</span> for what is genuinely on, and what is not.</p>
+</div>
+
+<h2>How the island is put together</h2>
+<p>Below 14th Street the streets are named and crooked, because they predate the 1811 grid. Above 14th they are numbered and rigid. That single fact explains most of Manhattan: downtown you get lost and it is pleasant, midtown you never get lost and it is not.</p>
+<p>Avenues run north–south and are long; streets run east–west and are short. Twenty numbered streets make roughly one mile. Fifth Avenue divides east addresses from west. The grid is rotated about 29° off true north, which is why "west" always feels like you are also walking uphill on the map.</p>
+<p>Rule of thumb for the whole trip: <b>1 avenue block ≈ 4 minutes on foot. 1 street block ≈ 1 minute.</b> If a walk is under twenty minutes, walk it — it will beat the subway once you count the stairs.</p>
+
+<h2>Where to point yourself</h2>
+<p>If you have three days and no fixed agenda, the natural shape is one day downtown (harbour, Financial District, Chinatown, Lower East Side), one day on the west side (High Line, Whitney, Meatpacking, West Village), and one day in midtown (Grand Central, MoMA, a deck, a theatre). <span class="jumpref" data-go="plan">Three Days</span> lays that out hour by hour.</p>
+
+<div class="panel dark">
+<h3>Before you go further</h3>
+<p>Opening hours, exhibition runs and event dates move. Everything here was checked in late August 2026, but confirm anything you are building a day around — especially museum hours over the holiday, the Washington Square art fair\u2019s exact dates, and any restaurant you are travelling for.</p>
+</div>`;
+}
+
+function secHoods(){
+ let out=`
+<p class="eyebrow">Card 2 of 9 · Fifteen neighbourhoods</p>
+<h1><span class="bul"></span>Neighbourhoods</h1>
+<p class="sub">Manhattan changes character every four or five blocks. These are the fifteen distinct places you can reach on foot below Central Park, running south to north, with what each one is actually for.</p>
+<ol class="line" style="--c:${LINES.green}">`;
+ HOODS.forEach((h,i)=>{
+  out+='<li class="stop'+(i===0||i===HOODS.length-1?' term':'')+'"><div class="box">'
+   +'<span class="nm">'+h.n+'</span>'
+   +'<p class="meta">'+h.b+'</p>'
+   +'<p>'+h.d+'</p>'
+   +'<p><b style="font-family:var(--sans);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)">Go for</b> &nbsp;'+h.g+'</p>'
+   +'<div class="tip"><b>Note</b> &nbsp;'+h.w+'</div>'
+   +'<div class="links"><a href="https://maps.google.com/?q='+encodeURIComponent(h.n+' Manhattan New York')+'" target="_blank" rel="noopener">Map</a></div>'
+   +'</div></li>';
+ });
+ return out+'</ol>';
+}
+
+function secSee(){
+ const items=P.filter(p=>p.s==='see');
+ return `
+<p class="eyebrow">Card 3 of 9 · ${items.length} permanent attractions</p>
+<h1><span class="bul"></span>Attractions</h1>
+<p class="sub">Things that are here every week of the year — museums, viewpoints, parks, landmarks and the free ones that most guides bury. Filter by what you feel like doing.</p>
+<div class="chips" data-filter="see"></div>
+<p class="count" id="count-see"></p>
+<div id="list-see"></div>`;
+}
+
+function secEat(){
+ const items=P.filter(p=>p.s==='eat');
+ return `
+<p class="eyebrow">Card 4 of 9 · ${items.length} places to eat</p>
+<h1><span class="bul"></span>Eat</h1>
+<p class="sub">New York\u2019s reservation culture is a competitive sport. The useful division is not by cuisine but by how hard it is to get in — so that is how this is sorted.</p>
+
+<div class="panel rule" style="--c:var(--line-orange)">
+<h3>How reservations actually work here</h3>
+<p>Almost everything runs on <b>Resy</b> or <b>OpenTable</b>. Restaurants release tables on a fixed schedule — most commonly 30 days ahead at exactly 10:00 New York time, though the window ranges from 13 to 60 days. If you are not refreshing at 09:59:50 on the drop date, you are picking through what is left.</p>
+<p>Three things that work when the drop does not: <b>set a Resy Notify</b> and accept an odd hour; <b>go to the bar</b>, where most hard restaurants seat walk-ins with the full menu; and <b>eat at 17:30 or 21:45</b>, which are the two times nobody wants and every restaurant has.</p>
+<p>Sunday of a holiday weekend is the softest night of the three. If there is one table you are travelling for, aim it at Sunday.</p>
+</div>
+
+<h2>The dishes worth crossing town for</h2>
+<table>
+<tr><th>Dish</th><th>What it is</th><th>Where</th></tr>
+<tr><td>Pastrami on rye</td><td>Navel brisket cured, smoked and steamed for three weeks, hand-carved, mustard only</td><td>Katz\u2019s, Lower East Side</td></tr>
+<tr><td>The plain slice</td><td>Thin, foldable, blistered, eaten standing up</td><td>Joe\u2019s Pizza, Carmine St</td></tr>
+<tr><td>Bagel and lox</td><td>Boiled bagel, cream cheese, cold-smoked salmon from an appetizing shop</td><td>Russ &amp; Daughters, Ess-a-Bagel</td></tr>
+<tr><td>Dim sum</td><td>Cantonese small plates ordered from a card, not a trolley, in most of Chinatown now</td><td>Nom Wah, Doyers St</td></tr>
+<tr><td>Chicken over rice</td><td>Halal cart platter, white sauce, a little red sauce</td><td>The Halal Guys, 53rd &amp; Sixth</td></tr>
+<tr><td>Regional Indian</td><td>The city\u2019s most exciting cooking right now — Chettinad, Bihari, Kashmiri, cooked without compromise</td><td>Semma, Dhamaka</td></tr>
+<tr><td>Korean barbecue</td><td>Tableside grilling, banchan, and a 04:00 closing time in Koreatown</td><td>Cote, or W 32nd St</td></tr>
+<tr><td>The mutton chop</td><td>A 26-ounce saddle of mutton, served nowhere else in America</td><td>Keens, W 36th St</td></tr>
+<tr><td>Oyster pan roast</td><td>Oysters, cream, chilli sauce, made in a steam kettle at the counter</td><td>Grand Central Oyster Bar</td></tr>
+<tr><td>Italian-American red sauce</td><td>Veal parm, rigatoni vodka, tableside Caesar — a genre invented here</td><td>Carbone, Torrisi</td></tr>
+</table>
+
+<div class="chips" data-filter="eat"></div>
+<p class="count" id="count-eat"></p>
+<div id="list-eat"></div>`;
+}
+
+function secDrink(){
+ const items=P.filter(p=>p.s==='drink');
+ return `
+<p class="eyebrow">Card 5 of 9 · ${items.length} bars and rooms</p>
+<h1><span class="bul"></span>Drink &amp; Night</h1>
+<p class="sub">Cocktail bars, jazz basements, two rooftops worth the lift, and the pubs that were here before any of it. Downtown starts late — before 21:00 you will have the place to yourself.</p>
+<div class="panel rule" style="--c:var(--line-brown)">
+<h3>Practicalities</h3>
+<p>Legal drinking age is 21 and ID is checked relentlessly regardless of how old you look — bring a passport, not a photocopy. Last call is 04:00 citywide, and plenty of bars use it. Tip $1–2 a drink at a bar, or 18–20% on a tab.</p>
+<p>Jazz clubs are the one thing here that need booking: the Vanguard holds 123 people and sells out. Cocktail bars mostly do not take reservations and mostly have a queue after 21:30.</p>
+</div>
+<div class="chips" data-filter="drink"></div>
+<p class="count" id="count-drink"></p>
+<div id="list-drink"></div>`;
+}
+
+function secWeekend(){
+ let out=`
+<p class="eyebrow">Card 6 of 9 · Dated, not evergreen</p>
+<h1><span class="bul"></span>This Weekend</h1>
+<p class="sub">What is actually happening between Friday 4 and Sunday 6 September 2026 — and, just as usefully, what is not, because a lot of New York\u2019s autumn starts the week after you leave.</p>
+
+<div class="days">
+ <div class="day"><header><div class="w">Friday</div><div class="d">4 September</div></header><ul>
+  <li><span class="t">11:00 &amp; 19:00</span><b>US Open, third round</b> — Flushing Meadows, Queens</li>
+  <li><span class="t">17:00 · free</span><b>Bon Appétit live</b> — The Glade, Little Island</li>
+  <li><span class="t">Evening</span><b>Whitney late opening</b> — Biennial + Warhol, Meatpacking</li>
+  <li><span class="t">19:00 / 20:00</span><b>Broadway curtains</b> — Theater District</li>
+  <li><span class="t">20:30 · $25</span><b>Ginsberg at 100</b> — The Amph, Little Island</li>
+  <li><span class="t">All evening</span><b>Rooftop &amp; harbour parties</b> — Pier 36, Skyport Marina, Hudson piers</li>
+ </ul></div>
+ <div class="day"><header><div class="w">Saturday</div><div class="d">5 September</div></header><ul>
+  <li><span class="t">08:00–18:00</span><b>Union Square Greenmarket</b> — the big day, ~140 stalls</li>
+  <li><span class="t">11:00 &amp; 19:00</span><b>US Open, third round</b> — Queens</li>
+  <li><span class="t">Opens today</span><b>Roy Lichtenstein: 1997</b> — Whitney Museum</li>
+  <li><span class="t">12:00–18:00 · free</span><b>Washington Square Outdoor Art Exhibit</b> — University Pl</li>
+  <li><span class="t">17:00 · free</span><b>Bon Appétit live</b> — Little Island</li>
+  <li><span class="t">14:00 &amp; 20:00</span><b>Broadway matinee and evening</b></li>
+  <li><span class="t">20:30 · $25</span><b>Ginsberg at 100</b> — Little Island</li>
+ </ul></div>
+ <div class="day"><header><div class="w">Sunday</div><div class="d">6 September</div></header><ul>
+  <li><span class="t">11:00 &amp; 19:00</span><b>US Open, fourth round</b> — the best draw of your three days</li>
+  <li><span class="t">12:00–18:00 · free</span><b>Washington Square Outdoor Art Exhibit</b> — day two</li>
+  <li><span class="t">Final day</span><b>The Black Mirror Experience</b> — The Shed, Hudson Yards</li>
+  <li><span class="t">17:00–24:00</span><b>Perreo on the Pier</b> — Watermark, Pier 15</li>
+  <li><span class="t">Season finale</span><b>Ginsberg at 100</b>, 20:30 — last night of Little Island\u2019s 2026 season</li>
+  <li><span class="t">Softest night</span><b>Best chance at a hard restaurant table</b></li>
+ </ul></div>
+</div>
+
+<h2>The listings in full</h2>
+<ol class="line" style="--c:${LINES.yellow}">`;
+ EVENTS.forEach((e,i)=>{
+  const links=(e.l||[]).map(l=>'<a href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>').join('');
+  out+='<li class="stop'+(i===0||i===EVENTS.length-1?' term':'')+'"><div class="box">'
+   +'<span class="nm">'+e.n+'</span>'
+   +'<p class="meta"><span class="hood">'+e.when+'</span><br>'+e.w+'</p>'
+   +'<p>'+e.d+'</p>'
+   +(e.tip?'<div class="tip"><b>Tip</b> &nbsp;'+e.tip+'</div>':'')
+   +(links?'<div class="links">'+links+'</div>':'')
+   +'</div></li>';
+ });
+ out+='</ol>';
+
+ out+='<h2>What is not on, despite what you may have read</h2><div class="panel dark"><table style="background:none;color:#fff;margin-top:4px">';
+ NOTON.forEach(r=>{out+='<tr><td style="color:#fff;border-color:#333;white-space:normal">'+r[0]+'</td><td style="color:#c6ccd4;border-color:#333">'+r[1]+'</td></tr>';});
+ out+='</table></div>';
+
+ out+=`<h2>Exhibitions hanging while you are here</h2>
+<table>
+<tr><th>Show</th><th>Where</th><th>Runs to</th></tr>
+<tr><td>Whitney Biennial 2026</td><td>Whitney Museum, Meatpacking</td><td>12 Oct</td></tr>
+<tr><td>Andy Warhol Family Album</td><td>Whitney Museum</td><td>19 Oct</td></tr>
+<tr><td>Roy Lichtenstein: 1997</td><td>Whitney Museum</td><td>Opens 5 Sep</td></tr>
+<tr><td>Frida and Diego: The Last Dream</td><td>MoMA, Midtown</td><td>12 Sep</td></tr>
+<tr><td>Architects of Liberation</td><td>MoMA</td><td>2 Jan</td></tr>
+<tr><td>Pierre Huyghe: UUmwelt</td><td>MoMA sculpture garden</td><td>29 Nov</td></tr>
+<tr><td>Tarot! Renaissance Symbols, Modern Visions</td><td>Morgan Library, Murray Hill</td><td>4 Oct</td></tr>
+<tr><td>Hujar: Contact</td><td>Morgan Library</td><td>25 Oct</td></tr>
+<tr><td>Declaration of Independence: Rare Americana</td><td>Morgan Library</td><td>13 Sep</td></tr>
+<tr><td>Doug Aitken: Lightscape <span class="flag free">Free</span></td><td>The Shed, Hudson Yards</td><td>13 Sep</td></tr>
+<tr><td>David Lamelas: The Machine <span class="flag free">Free</span></td><td>Dia Chelsea</td><td>16 Jan</td></tr>
+<tr><td>David Byrne: Stairwell Drawings <span class="flag free">Free</span></td><td>Pace Gallery, Chelsea</td><td>31 Dec</td></tr>
+<tr><td>Our Flag Was Still There</td><td>9/11 Memorial Museum</td><td>28 Feb</td></tr>
+</table>`;
+ return out;
+}
+
+function secMap(){
+ return `
+<p class="eyebrow">Card 7 of 9 · Every entry, plotted</p>
+<h1><span class="bul"></span>Map</h1>
+<p class="sub">Manhattan below 59th Street, drawn to scale. Faint diagonals show the true angle of the 1811 grid — about 29° off north, which is why the avenues never quite run the way you expect. Tap any dot.</p>
+<div class="mapwrap">
+  <div class="legend" id="legend"></div>
+  <svg id="svgmap" viewBox="0 0 ${SVGW} ${SVGH}" width="${SVGW}" height="${SVGH}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Map of Manhattan below 59th Street with attractions, restaurants and bars marked"></svg>
+  <div id="mapinfo"><p class="small" style="color:var(--muted);margin:0">Select a marker to see the entry.</p></div>
+</div>`;
+}
+
+function secPlan(){
+ return `
+<p class="eyebrow">Card 8 of 9 · A workable shape</p>
+<h1><span class="bul"></span>Three Days</h1>
+<p class="sub">One version of the weekend that does not require a car, a tour or a schedule you will abandon by 11:00. Each day is one broad geography, so the walking stays short and the transitions make sense.</p>
+
+<div class="panel rule" style="--c:var(--line-lime)">
+<h3>Friday — downtown, harbour to Houston</h3>
+<p><b>08:00</b> &nbsp;Bagel and coffee at Russ &amp; Daughters on Houston Street, eaten on a bench.<br>
+<b>09:00</b> &nbsp;Subway to Bowling Green. Charging Bull before the crowds, then Trinity Church and the graveyard, then Wall Street.<br>
+<b>10:30</b> &nbsp;The 9/11 Memorial plaza, then the museum (timed ticket). Allow two hours; it is heavier than you expect.<br>
+<b>13:00</b> &nbsp;Walk through the Oculus, north into Tribeca. Lunch at Frenchette or a slice, whichever mood you are in.<br>
+<b>14:30</b> &nbsp;Staten Island Ferry, round trip, free, one hour, the Statue of Liberty from the deck.<br>
+<b>16:00</b> &nbsp;Chinatown on foot: Doyers Street, Columbus Park, an egg tart on Mott.<br>
+<b>17:00</b> &nbsp;Optional — Little Island for the free Bon Appétit session at 17:00, or straight to the Lower East Side.<br>
+<b>19:30</b> &nbsp;Dinner in the Lower East Side or the East Village. <b>22:00</b> Attaboy or Double Chicken Please.</p>
+</div>
+
+<div class="panel rule" style="--c:var(--line-lime)">
+<h3>Saturday — the west side, river to river</h3>
+<p><b>08:30</b> &nbsp;The High Line from Gansevoort Street, before the crowds arrive. Forty minutes to 23rd Street.<br>
+<b>10:00</b> &nbsp;Whitney Museum — Biennial, Warhol, and the new Lichtenstein show opening today. Two hours.<br>
+<b>12:30</b> &nbsp;Lunch at Chelsea Market — Los Tacos No. 1, standing up.<br>
+<b>13:30</b> &nbsp;Walk south into the West Village. Bedford, Grove, Commerce, Barrow. No destination.<br>
+<b>15:00</b> &nbsp;Washington Square Park, then east to the outdoor art exhibit on University Place (until 18:00).<br>
+<b>17:00</b> &nbsp;Put your name in at Via Carota, drink at Bar Pisellino while you wait. Or Grand Banks at Pier 25 for oysters and sunset at 19:15.<br>
+<b>20:30</b> &nbsp;Ginsberg at 100 at Little Island, or a 20:00 set at the Village Vanguard, or a Broadway curtain.</p>
+</div>
+
+<div class="panel rule" style="--c:var(--line-lime)">
+<h3>Sunday — midtown, and up</h3>
+<p><b>09:00</b> &nbsp;MoMA at opening. Go to the fifth floor first and work down; by noon it is unmanageable.<br>
+<b>11:30</b> &nbsp;Walk east to St Patrick\u2019s, then Rockefeller Center, then Grand Central. Look at the ceiling; try the Whispering Gallery.<br>
+<b>13:00</b> &nbsp;Lunch at the Grand Central dining concourse, or Urban Hawker if you want the best food in midtown.<br>
+<b>14:30</b> &nbsp;Choose one: the Morgan Library (quiet, extraordinary), the Roosevelt Island tram (four minutes, cheap, brilliant), or the US Open fourth round if you have tickets.<br>
+<b>17:30</b> &nbsp;Bryant Park chairs, or Koreatown\u2019s one block for an early barbecue.<br>
+<b>19:00</b> &nbsp;Top of the Rock, booked for the sunset slot — the Empire State Building in front, the park behind.<br>
+<b>21:00</b> &nbsp;Sunday is the loosest restaurant night of the weekend. This is when to try for the table you could not get.</p>
+</div>
+
+<h2>If it rains</h2>
+<p>September thunderstorms in New York arrive fast and end fast — usually an hour. If one lands: the Morgan Library, the Tenement Museum, the Museum of Chinese in America, Grand Central\u2019s concourse and the Oculus are all indoors and all worth the hour. The subway is a rain shelter with trains in it.</p>
+
+<h2>If you only have one afternoon</h2>
+<p>Get off at 14th Street. Walk the High Line north for twenty minutes, come down, walk south into the West Village, get lost for an hour, and eat at whatever has a queue outside. That is the most Manhattan afternoon available below 59th Street.</p>`;
+}
+
+function secPractical(){
+ return `
+<p class="eyebrow">Card 9 of 9 · The mechanics</p>
+<h1><span class="bul"></span>Practical</h1>
+<p class="sub">Transit, money, timing and the small conventions that make the difference between visiting New York and moving through it.</p>
+
+<h2>Getting around</h2>
+<table>
+<tr><th>Mode</th><th>How it works</th></tr>
+<tr><td>Subway</td><td>Tap a contactless card or phone at the turnstile — OMNY. No ticket needed. The fare caps after twelve rides in seven days, so a weekly pass is pointless for a weekend. Runs 24 hours; late-night waits can be 15–20 minutes. Downtown, the 1/2/3, 4/5/6, A/C/E and N/Q/R all run north–south; the L is the only real cross-town line below 42nd.</td></tr>
+<tr><td>Walking</td><td>Your default. Twenty numbered streets to a mile. Below 14th Street the grid gives up and you should too.</td></tr>
+<tr><td>Citi Bike</td><td>Day pass through the app. The Hudson River greenway is flat, protected and the best ride in the city. E-bikes cost extra per minute.</td></tr>
+<tr><td>Taxi &amp; rideshare</td><td>Yellow cabs are hailed on the street and are often faster to get than an app car in midtown. Both are slow at 17:00–19:00 and after theatres let out.</td></tr>
+<tr><td>Ferries</td><td>NYC Ferry runs from Wall Street, Pier 11 and West 39th. Cheap, scenic, and the East River route beats the subway for Brooklyn.</td></tr>
+<tr><td>Airports</td><td>JFK: AirTrain to Jamaica, then LIRR to Penn (35–50 min). LGA: Q70 bus to the E/F/M/R, or a cab. EWR: NJ Transit to Penn Station.</td></tr>
+</table>
+
+<h2>Money and conventions</h2>
+<div class="grid">
+ <div class="stat"><span class="k">Tipping</span><span class="v">18–20%</span><span class="n">Restaurants and bars. $1–2 a drink at a bar. Card readers suggest 20/25/30% — you are not obliged to take the default.</span></div>
+ <div class="stat"><span class="k">Sales tax</span><span class="v">8.875%</span><span class="n">Added at the till, not shown on the price. Clothing and shoes under $110 are exempt.</span></div>
+ <div class="stat"><span class="k">Cash</span><span class="v">Rarely needed</span><span class="n">Except McSorley\u2019s, some Chinatown counters and a few dive bars. Carry $40 for those.</span></div>
+ <div class="stat"><span class="k">Drinking age</span><span class="v">21, enforced</span><span class="n">Bring a passport. Photocopies and expired IDs are refused.</span></div>
+</div>
+
+<h2>Holiday weekend specifics</h2>
+<p><b>Friday and Saturday</b> run normally. Museums, shops and restaurants keep standard hours; the city is busy.</p>
+<p><b>Sunday</b> is the quietest of your three days — many people have left town, restaurant tables loosen, and the Financial District is close to empty.</p>
+<p><b>Monday 7 September</b> is Labor Day itself. Museums and most shops stay open. Banks, post offices and public offices close. The subway runs a Sunday schedule, so allow extra time if you are travelling that day. Federal Hall and other National Park Service offices may be shut.</p>
+<p>Some downtown lunch spots that serve office workers close entirely Saturday and Sunday. If you are in the Financial District at midday on a weekend, walk to the Seaport or Tribeca.</p>
+
+<h2>Small things that help</h2>
+<p><b>Stand right, walk left</b> on escalators, and never stop at the top of a subway stair.</p>
+<p><b>Public toilets are scarce.</b> Reliable ones: Bryant Park, the Oculus, Whole Foods, hotel lobbies, and any museum you have paid to enter.</p>
+<p><b>Water is free and good.</b> New York tap water is famously soft; carry a bottle and refill it.</p>
+<p><b>Book museum tickets online.</b> Same price, no queue, and several now require timed entry.</p>
+<p><b>September is humid.</b> Linen, comfortable shoes and a compact umbrella. Air conditioning indoors is aggressive — bring a layer.</p>
+
+<h2>Useful links</h2>
+<div class="links" style="font-size:14px">
+ <a href="https://www.nyctourism.com/" target="_blank" rel="noopener">NYC Tourism</a>
+ <a href="https://www.mta.info/" target="_blank" rel="noopener">MTA subway status</a>
+ <a href="https://www.timeout.com/newyork" target="_blank" rel="noopener">Time Out New York</a>
+ <a href="https://www.theinfatuation.com/new-york" target="_blank" rel="noopener">The Infatuation</a>
+ <a href="https://resy.com/cities/ny" target="_blank" rel="noopener">Resy</a>
+ <a href="https://www.tdf.org/tkts/" target="_blank" rel="noopener">TKTS</a>
+ <a href="https://www.nycgovparks.org/" target="_blank" rel="noopener">NYC Parks events</a>
+</div>`;
+}
+
+const BUILD={overview:secOverview,hoods:secHoods,see:secSee,eat:secEat,drink:secDrink,weekend:secWeekend,map:secMap,plan:secPlan,practical:secPractical};
+
+/* =======================================================================
+   BOOT
+   ======================================================================= */
+const nav=document.getElementById('nav'), rail=document.getElementById('rail'), main=document.getElementById('main');
+
+SECTIONS.forEach(s=>{
+  const b=document.createElement('button');
+  b.style.setProperty('--c',LINES[s.c]); b.dataset.c=s.c; b.dataset.go=s.id;
+  b.innerHTML='<span class="bul">'+s.glyph+'</span>'+s.nav;
+  b.addEventListener('click',()=>go(s.id));
+  nav.appendChild(b);
+
+  const sec=document.createElement('section');
+  sec.className='card'; sec.id='sec-'+s.id; sec.dataset.sec=s.id; sec.style.setProperty('--c',LINES[s.c]);
+  sec.innerHTML=BUILD[s.id]();
+  main.appendChild(sec);
+});
+main.insertAdjacentHTML('beforeend',
+ '<footer>South of the Park &nbsp;·&nbsp; a guide to Manhattan below 59th Street for 4–6 September 2026 &nbsp;·&nbsp; '
+ +'compiled 26 August 2026 &nbsp;·&nbsp; hours, dates and exhibition runs change — confirm anything you are planning a day around.</footer>');
+
+/* filters */
+function buildFilters(sec){
+  const wrap=document.querySelector('.chips[data-filter="'+sec+'"]'); if(!wrap) return;
+  const items=P.filter(p=>p.s===sec);
+  const tags=[...new Set(items.flatMap(p=>p.t))];
+  let active=null;
+  const draw=()=>{
+    const shown=active?items.filter(p=>p.t.includes(active)):items;
+    document.getElementById('list-'+sec).innerHTML=listFor(sec,SECTIONS.find(s=>s.id===sec).c,shown);
+    document.getElementById('count-'+sec).textContent=
+      shown.length+' of '+items.length+' shown'+(active?' · '+active:'');
+    wrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.tag===active)));
+  };
+  const all=document.createElement('button');
+  all.className='chip'; all.textContent='All'; all.dataset.tag='';
+  all.addEventListener('click',()=>{active=null;draw();});
+  wrap.appendChild(all);
+  tags.forEach(t=>{
+    const c=document.createElement('button');
+    c.className='chip'; c.textContent=t; c.dataset.tag=t; c.setAttribute('aria-pressed','false');
+    c.addEventListener('click',()=>{active=(active===t?null:t);draw();});
+    wrap.appendChild(c);
+  });
+  draw();
+  wrap.querySelector('.chip').setAttribute('aria-pressed','false');
+}
+['see','eat','drink'].forEach(buildFilters);
+
+/* internal jump links */
+document.addEventListener('click',e=>{
+  const j=e.target.closest('.jumpref'); if(j) go(j.dataset.go);
+});
+document.querySelectorAll('.jumpref').forEach(s=>{
+  s.classList.add('jump'); s.setAttribute('role','button'); s.setAttribute('tabindex','0');
+  s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go(s.dataset.go);}});
+});
+
+/* routing */
+function go(id){
+  const s=SECTIONS.find(x=>x.id===id)||SECTIONS[0];
+  document.querySelectorAll('.card').forEach(c=>c.classList.toggle('on',c.dataset.sec===s.id));
+  nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.go===s.id)));
+  rail.style.setProperty('--c',LINES[s.c]);
+  try{ if(location.hash.slice(1)!==s.id) history.replaceState(null,'','#'+s.id); }catch(e){}
+  window.scrollTo({top:0,behavior:'instant'});
+  document.title='South of the Park — '+s.nav;
+  if(s.id==='map') drawMap();
+}
+window.addEventListener('hashchange',()=>go(location.hash.slice(1)));
+go(location.hash.slice(1)||'overview');
+
+/* =======================================================================
+   MAP DRAWING
+   ======================================================================= */
+let mapDrawn=false, mapOff=new Set();
+function drawMap(){
+  if(mapDrawn){return;} mapDrawn=true;
+  const svg=document.getElementById('svgmap');
+  const NS='http://www.w3.org/2000/svg';
+  const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+
+  svg.appendChild(el('rect',{x:0,y:0,width:SVGW,height:SVGH,fill:'var(--water)'}));
+  [NJ,BKQ,ROOS].forEach(g=>svg.appendChild(el('path',{d:path(g),fill:'var(--land)'})));
+  svg.appendChild(el('path',{d:path(NORTHOF),fill:'#c3cbc1'}));
+  svg.appendChild(el('path',{d:path(MANHATTAN),fill:'#fbfbf9',stroke:'#12161c','stroke-width':1.6,'stroke-linejoin':'round'}));
+
+  /* the 1811 grid, at its true 29° rotation, clipped to the part of the island that has one */
+  const defs=el('defs',{});
+  const clip=el('clipPath',{id:'gridzone'});
+  clip.appendChild(el('path',{d:path(GRIDZONE)}));
+  defs.appendChild(clip); svg.appendChild(defs);
+
+  const th=29*Math.PI/180, cx=SVGW/2, cy=SVGH/2, R=1500;
+  const ux=Math.sin(th), uy=-Math.cos(th);   // avenues run about N29°E
+  const vx=Math.cos(th), vy=Math.sin(th);    // streets run perpendicular
+  const grid=el('g',{'clip-path':'url(#gridzone)',stroke:'#12161c'});
+  for(let i=-40;i<=40;i++){                  // avenues, ~280 m apart
+    const px=cx+i*28*vx, py=cy+i*28*vy;
+    grid.appendChild(el('line',{'stroke-width':.9,opacity:.16,
+      x1:px-ux*R,y1:py-uy*R,x2:px+ux*R,y2:py+uy*R}));
+  }
+  for(let i=-40;i<=40;i++){                  // every fifth cross street
+    const px=cx+i*40*ux, py=cy+i*40*uy;
+    grid.appendChild(el('line',{'stroke-width':.5,opacity:.1,
+      x1:px-vx*R,y1:py-vy*R,x2:px+vx*R,y2:py+vy*R}));
+  }
+  svg.appendChild(grid);
+  svg.appendChild(el('path',{d:path(MANHATTAN),fill:'none',stroke:'#12161c','stroke-width':1.8,'stroke-linejoin':'round'}));
+
+  /* 59th St boundary */
+  const bl=el('path',{d:'M '+X(-73.9928).toFixed(1)+' '+Y(40.7742).toFixed(1)
+    +' L '+X(-73.9819).toFixed(1)+' '+Y(40.7681).toFixed(1)
+    +' L '+X(-73.9732).toFixed(1)+' '+Y(40.7644).toFixed(1)
+    +' L '+X(-73.9583).toFixed(1)+' '+Y(40.7580).toFixed(1),
+    fill:'none',stroke:'#b933ad','stroke-width':3,'stroke-linecap':'round'});
+  svg.appendChild(bl);
+  const bt=el('text',{x:X(-73.9800),y:Y(40.7716),'font-size':10.5,'letter-spacing':1.6,
+    fill:'#b933ad','font-weight':700,'text-anchor':'middle'});
+  bt.textContent='59TH ST — GUIDE BOUNDARY'; svg.appendChild(bt);
+
+  /* water labels */
+  [['HUDSON RIVER',40.7380,-74.0235,-70],['EAST RIVER',40.7340,-73.9645,-62],
+   ['UPPER BAY',40.6990,-74.0300,0]].forEach(([t,la,ln,rot])=>{
+    const e=el('text',{x:X(ln),y:Y(la),'font-size':11,'letter-spacing':2.2,fill:'#7d8b95',
+      'font-weight':700,transform:'rotate('+rot+' '+X(ln)+' '+Y(la)+')'});
+    e.textContent=t; svg.appendChild(e);
+  });
+  [['NEW JERSEY',40.7500,-74.0305,'start'],['BROOKLYN',40.7020,-73.9450,'end'],
+   ['QUEENS',40.7560,-73.9450,'end']].forEach(([t,la,ln,anch])=>{
+    const e=el('text',{x:X(ln),y:Y(la),'font-size':10.5,'letter-spacing':1.8,fill:'#8f978d',
+      'font-weight':700,'text-anchor':anch});
+    e.textContent=t; svg.appendChild(e);
+  });
+
+  /* markers */
+  const layer=el('g',{});
+  svg.appendChild(layer);
+
+  /* neighbourhood labels sit above the markers, haloed, and ignore clicks */
+  const labels=el('g',{});
+  MAPLABELS.forEach(([t,la,ln])=>{
+    const e=el('text',{class:'hood-label',x:X(ln),y:Y(la),'font-size':9.6,'letter-spacing':1.5,
+      fill:'#4a525d','font-weight':700,'text-anchor':'middle'});
+    e.textContent=t; labels.appendChild(e);
+  });
+  svg.appendChild(labels);
+  const info=document.getElementById('mapinfo');
+
+  function paint(){
+    layer.innerHTML='';
+    P.forEach(p=>{
+      if(mapOff.has(p.s)) return;
+      const gm=el('g',{class:'mk',tabindex:0,role:'button'});
+      gm.appendChild(el('circle',{cx:X(p.lng),cy:Y(p.lat),r:5.4,fill:MAPCATS[p.s].k}));
+      const title=el('title',{}); title.textContent=p.n; gm.appendChild(title);
+      const show=()=>{
+        info.innerHTML='<span class="nm">'+p.n+'</span>'
+         +'<p class="meta"><span class="hood">'+p.h+'</span>'+(p.a?' · '+p.a:'')+(p.o?'<br>'+p.o:'')+'</p>'
+         +'<p style="margin:0 0 8px">'+p.d+'</p>'
+         +'<div class="links"><a href="'+gmap(p)+'" target="_blank" rel="noopener" style="--c:'+MAPCATS[p.s].k+';border-color:'+MAPCATS[p.s].k+'">Open in Google Maps</a></div>';
+      };
+      gm.addEventListener('click',show);
+      gm.addEventListener('focus',show);
+      gm.addEventListener('keydown',e=>{if(e.key==='Enter')show();});
+      layer.appendChild(gm);
+    });
+  }
+  paint();
+
+  /* legend */
+  const lg=document.getElementById('legend');
+  Object.entries(MAPCATS).forEach(([k,v])=>{
+    const b=document.createElement('button');
+    b.className='lg'; b.style.setProperty('--k',v.k); b.setAttribute('aria-pressed','true');
+    b.innerHTML='<i></i>'+v.l+' ('+P.filter(p=>p.s===k).length+')';
+    b.addEventListener('click',()=>{
+      if(mapOff.has(k)){mapOff.delete(k);b.setAttribute('aria-pressed','true');}
+      else{mapOff.add(k);b.setAttribute('aria-pressed','false');}
+      paint();
+    });
+    lg.appendChild(b);
+  });
+}
+</script>
+</body>
+</html>
